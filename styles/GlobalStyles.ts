@@ -3,7 +3,7 @@ import { createGlobalStyle } from "styled-components";
 const GlobalStyles = createGlobalStyle`
   * {
     font-family: 'Josefin Sans', sans-serif;
-    font-size: 14px;
+    font-size: 16px;
     box-sizing: border-box;
     -moz-box-sizing: border-box;
     -webkit-box-sizing: border-box;
@@ -22,19 +22,21 @@ const GlobalStyles = createGlobalStyle`
 
   h1 {
     font-family: 'Comfortaa', sans-serif;
+    text-transform: uppercase;
     margin: 0;
-    font-size: 20px;
+    font-size: 3rem;
   }
 
   h2 {
     font-family: 'Comfortaa', sans-serif;
     margin: 0;
-    font-size: 18px;
+    font-size: 2rem;
+    color: ${({ theme }) => theme.colors.secondaryDark};
   }
 
   h3 {
     font-family: 'Comfortaa', sans-serif;
-    font-size: 16px;
+    font-size: 2rem;
     margin: 0;
   }
 
