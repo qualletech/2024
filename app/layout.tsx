@@ -133,4 +133,7 @@ const IconContainer = styled.a`
 
 const Main = styled.main`
   display: grid;
+  align-content: start;
+  justify-content: stretch;
+  grid-gap: 1rem;
 `;
