@@ -11,6 +11,6 @@ const theme = {
     neutralDark: "#020088",
     neutralLight: "#C7CEFF",
   },
-};
+}
 
-export default theme;
+export default theme

@@ -14,9 +14,8 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   const pathname = usePathname()
   const router = useRouter()
 
-  const homepage = pathname === "/"
+  const isHomepage = pathname === "/"
 
-  console.log(homepage)
   return (
     <html lang="en">
       <head>
@@ -27,12 +26,14 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       </head>
       <body>
         <StyleProvider>
-          <Logo $move={homepage}>
+          <Logo $homeAnimation={isHomepage}>
             <Image src="/logo-dark.png" height={200} width={200} alt="Qualle Tech Logo" />
           </Logo>
           <Container>
             <Main>
-              <h1 onClick={() => router.push("/")}>Qualle Tech</h1>
+              <IconContainer onClick={() => router.push("/")}>
+                <h1>Qualle Tech</h1>
+              </IconContainer>
               {children}
             </Main>
             <SideBar>
@@ -56,6 +57,9 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
 const homepagefloatAnimation = keyframes`
   0% {
     transform: translatey(0px);
+  }
+  15% {
+    transform: translatey(-150px) translatex(-173px);
   }
   25% {
     transform: translatey(-250px) translatex(-250px);
@@ -83,13 +87,13 @@ const floatAnimation = keyframes`
   }
 `
 
-const Logo = styled.div<{ $move: boolean }>`
+const Logo = styled.div<{ $homeAnimation: boolean }>`
   position: absolute;
   bottom: 30px;
   right: 50px;
   opacity: 60%;
-  animation-name: ${({ $move }) => ($move ? homepagefloatAnimation : floatAnimation)};
-  animation-duration: ${({ $move }) => ($move ? "60s" : "5s")};
+  animation-name: ${({ $homeAnimation }) => ($homeAnimation ? homepagefloatAnimation : floatAnimation)};
+  animation-duration: ${({ $homeAnimation }) => ($homeAnimation ? "60s" : "5s")};
   animation-iteration-count: infinite;
   animation-direction: alternate;
 `
@@ -118,7 +122,6 @@ const IconContainer = styled.a`
 
 const Main = styled.main`
   display: grid;
-  align-content: start;
-  justify-content: stretch;
+  grid-template-rows: auto 1fr;
   grid-gap: 1rem;
 `

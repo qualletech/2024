@@ -1,69 +1,71 @@
-"use client";
-import { useRouter } from "next/navigation";
-import styled from "styled-components";
+"use client"
+
+import { useRouter } from "next/navigation"
+import styled, { keyframes } from "styled-components"
 
 export default function Page() {
-  const router = useRouter();
+  const router = useRouter()
   return (
     <Container>
       <SubTitle>
         Qualle <i>noun</i> - /kwɑːl.i/ quall-e - jellyfish
       </SubTitle>
       <Columns>
-        <Blob1 onClick={() => router.push("/projects")}>Developed by</Blob1>
-        <Blob2 onClick={() => router.push("/about")}>Get to know</Blob2>
-        <Blob3 onClick={() => router.push("/contact")}>Work with</Blob3>
+        <Blob onClick={() => router.push("/projects")} $background="/blob1.svg" $margin="-20">
+          <h3>Developed by</h3>
+        </Blob>
+        <Blob onClick={() => router.push("/about")} $background="/blob2.svg" $margin="30">
+          <h3>Get to know</h3>
+        </Blob>
+        <Blob onClick={() => router.push("/contact")} $background="/blob3.svg" $margin="20">
+          <h3>Work with</h3>
+        </Blob>
       </Columns>
     </Container>
-  );
+  )
 }
 
 const Container = styled.div`
   display: grid;
   grid-gap: 1rem;
-`;
+  grid-template-rows: auto 1fr;
+`
 
 const SubTitle = styled.h2`
   font-size: 1rem;
   padding: 0 10rem;
-`;
+`
 
 const Columns = styled.div`
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-`;
+  grid-auto-flow: column;
+  align-items: space-between;
+  padding: 0;
+`
 
-const Blob1 = styled.div`
-  margin: 5rem 0 0 0;
-  display: grid;
-  align-items: center;
-  justify-content: center;
-  border-radius: 40% 60% 60% 40% / 70% 30% 70% 30%;
-  width: 20rem;
-  height: 20rem;
-  box-shadow: -10px 10px 0 rgba(255, 255, 255, 0.07);
-  background: ${({ theme }) => theme.colors.interactionDark}30;
-`;
+const floatAnimation = keyframes`
+  0% {
+    transform: translatey(0px);
+  }
+  50% {
+    transform: translatey(-10px);
+   }
+  100% {
+    transform: translatey(0px);
+  }
+`
 
-const Blob2 = styled.div`
-  margin: 1.5rem 0 0 0;
+const Blob = styled.div<{ $background: string; $margin: string }>`
+  top: ${({ $margin }) => `${$margin}px`};
+  cursor: pointer;
   display: grid;
-  align-items: center;
   justify-content: center;
-  border-radius: 70% 40% 70% 90% / 53% 74% 82% 33%;
-  width: 20rem;
-  height: 20rem;
-  box-shadow: -10px 10px 0 rgba(255, 255, 255, 0.07);
-  background: ${({ theme }) => theme.colors.neutralDark}20;
-`;
-const Blob3 = styled.div`
-  margin: 3rem 0 0 0;
-  display: grid;
   align-items: center;
-  justify-content: center;
-  border-radius: 39% 88% 73% 44% / 32% 99% 77% 90%;
-  width: 20rem;
-  height: 20rem;
-  box-shadow: -10px 10px 0 rgba(255, 255, 255, 0.07);
-  background: ${({ theme }) => theme.colors.interactionDark}60;
-`;
+  background: ${({ $background }) => `url(${$background})`} 0 0/100% 100% no-repeat;
+  &:hover {
+    opacity: 80%;
+    animation-name: ${floatAnimation};
+    animation-duration: 5s;
+    animation-iteration-count: infinite;
+  }
+`
