@@ -12,13 +12,13 @@ export default function Page() {
       </SubTitle>
       <Columns>
         <Blob onClick={() => router.push("/projects")} $background="/blob1.svg" $margin="-20">
-          <h3>Developed by</h3>
+          <h3>Developed by us</h3>
         </Blob>
         <Blob onClick={() => router.push("/about")} $background="/blob2.svg" $margin="30">
-          <h3>Get to know</h3>
+          <h3>About us</h3>
         </Blob>
         <Blob onClick={() => router.push("/contact")} $background="/blob3.svg" $margin="20">
-          <h3>Work with</h3>
+          <h3>Work with us</h3>
         </Blob>
       </Columns>
     </Container>
@@ -61,7 +61,7 @@ const Blob = styled.div<{ $background: string; $margin: string }>`
   display: grid;
   justify-content: center;
   align-items: center;
-  background: ${({ $background }) => `url(${$background})`} 0 0/100% 100% no-repeat;
+  background: ${({ $background }) => `url(${$background})`} 0 0/105% 100% no-repeat;
   &:hover {
     opacity: 80%;
     animation-name: ${floatAnimation};

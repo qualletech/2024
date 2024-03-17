@@ -24,8 +24,8 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@700&family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap"
         />
       </head>
-      <body>
-        <StyleProvider>
+      <StyleProvider>
+        <body>
           <Logo $homeAnimation={isHomepage}>
             <Image src="/logo-dark.png" height={200} width={200} alt="Qualle Tech Logo" />
           </Logo>
@@ -48,8 +48,8 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
               </IconContainer>
             </SideBar>
           </Container>
-        </StyleProvider>
-      </body>
+        </body>
+      </StyleProvider>
     </html>
   )
 }
@@ -103,14 +103,19 @@ const Container = styled.div`
   grid-template-columns: 95% 5%;
   padding: 2rem;
   grid-gap: 1rem;
-  height: 100dvh;
-  width: 100dvw;
+  height: 100vh;
+  width: 100vw;
+  overflow: none;
 `
 
 const SideBar = styled.div`
   display: grid;
   align-content: space-between;
   justify-items: end;
+  height: 90vh;
+  position: fixed;
+  right: 1rem;
+  top: 1rem;
 `
 
 const IconContainer = styled.a`

@@ -1,4 +1,4 @@
-import { createGlobalStyle } from "styled-components";
+import { createGlobalStyle } from "styled-components"
 
 const GlobalStyles = createGlobalStyle`
   * {
@@ -16,6 +16,8 @@ const GlobalStyles = createGlobalStyle`
   }
 
   body {
+    height: 100vh;
+    width: 100vw;
     background: ${({ theme }) => theme.colors.backgroundDark};
     color: ${({ theme }) => theme.colors.primaryDark};
   }
@@ -28,16 +30,17 @@ const GlobalStyles = createGlobalStyle`
   }
 
   h2 {
-    font-family: 'Comfortaa', sans-serif;
+
     margin: 0;
-    font-size: 2rem;
+    font-size: 2.5rem;
     color: ${({ theme }) => theme.colors.secondaryDark};
+    font-weight: 400;
   }
 
   h3 {
-    font-family: 'Comfortaa', sans-serif;
     font-size: 2rem;
     margin: 0;
+    font-weight: 400;
   }
 
   ::-webkit-scrollbar {
@@ -58,6 +61,6 @@ const GlobalStyles = createGlobalStyle`
     opacity: 0.5;
     border-radius: 8px;
   }
-`;
+`
 
-export default GlobalStyles;
+export default GlobalStyles
