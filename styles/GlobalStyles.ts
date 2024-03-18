@@ -18,7 +18,9 @@ const GlobalStyles = createGlobalStyle`
   body {
     height: 100vh;
     width: 100vw;
-    background: ${({ theme }) => theme.colors.backgroundDark};
+    background:  ${({ theme }) => theme.colors.backgroundLight};
+    padding: 5vh 5vw;
+    box-sizing: border-box;
     color: ${({ theme }) => theme.colors.primaryDark};
   }
 
@@ -47,7 +49,6 @@ const GlobalStyles = createGlobalStyle`
     width: 4px;
     height: 4px;
     position: absolute;
-    bottom: 0;
     right: 0;
   }
 
