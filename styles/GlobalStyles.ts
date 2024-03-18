@@ -13,14 +13,6 @@ const GlobalStyles = createGlobalStyle`
     padding: 0;
     -webkit-font-smoothing: antialiased;
     position: relative;
-  }
-
-  body {
-    height: 100vh;
-    width: 100vw;
-    background:  ${({ theme }) => theme.colors.backgroundLight};
-    padding: 5vh 5vw;
-    box-sizing: border-box;
     color: ${({ theme }) => theme.colors.primaryDark};
   }
 

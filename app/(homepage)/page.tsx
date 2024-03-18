@@ -1,6 +1,5 @@
 "use client"
 
-import theme from "../styles/theme"
 import { useRouter } from "next/navigation"
 import styled, { keyframes } from "styled-components"
 
@@ -49,6 +48,7 @@ const Blob = styled.div<{ $background: string; $margin: string }>`
   background: ${({ $background }) => `url(${$background})`} 0 0/105% 100% no-repeat;
   filter: drop-shadow(0 0.2rem 0.7rem #21219b40);
   z-index: 20;
+  height: auto;
   &:hover {
     opacity: 80%;
     animation-name: ${floatAnimation};

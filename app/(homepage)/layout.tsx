@@ -2,8 +2,8 @@
 
 "use client"
 
-import StyleProvider from "../styles/StyleProvider"
-import theme from "../styles/theme"
+import StyleProvider from "../../styles/StyleProvider"
+import theme from "../../styles/theme"
 import { mdiGithub, mdiInstagram, mdiLinkedin } from "@mdi/js"
 import Icon from "@mdi/react"
 import Image from "next/image"
@@ -23,36 +23,45 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       </head>
       <StyleProvider>
         <body>
-          <Logo>
-            <Image src="/logo-dark.png" height={200} width={200} alt="Qualle Tech Logo" />
-          </Logo>
-          <Container>
-            <Main>
-              <IconContainer onClick={() => router.push("/")}>
-                <h1>Qualle Tech</h1>
-              </IconContainer>
-              {children}
-            </Main>
-            <SubTitle>
-              Qualle <i>noun</i> - /kwɑːl.i/ quall-e - jellyfish
-            </SubTitle>
-            <SideBar>
-              <IconContainer href="https://www.linkedin.com/in/vikwedel/" target="__blank" rel="noopener noreferrer">
-                <Icon path={mdiLinkedin} size="2rem" color={theme.colors.primaryLight} />
-              </IconContainer>
-              <IconContainer href="https://www.instagram.com/qualle.tech" target="__blank" rel="noopener noreferrer">
-                <Icon path={mdiInstagram} size="2rem" color={theme.colors.primaryLight} />
-              </IconContainer>
-              <IconContainer href="https://github.com/vik-wed" target="__blank" rel="noopener noreferrer">
-                <Icon path={mdiGithub} size="2rem" color={theme.colors.primaryLight} />
-              </IconContainer>
-            </SideBar>
-          </Container>
+          <BodyContainer>
+            <Logo>
+              <Image src="/logo-dark.png" height={200} width={200} alt="Qualle Tech Logo" />
+            </Logo>
+            <Container>
+              <Main>
+                <IconContainer onClick={() => router.push("/")}>
+                  <h1>Qualle Tech</h1>
+                </IconContainer>
+                {children}
+              </Main>
+              <SubTitle>
+                Qualle <i>noun</i> - /kwɑːl.i/ quall-e - jellyfish
+              </SubTitle>
+              <SideBar>
+                <IconContainer href="https://www.linkedin.com/in/vikwedel/" target="__blank" rel="noopener noreferrer">
+                  <Icon path={mdiLinkedin} size="2rem" color={theme.colors.primaryLight} />
+                </IconContainer>
+                <IconContainer href="https://www.instagram.com/qualle.tech" target="__blank" rel="noopener noreferrer">
+                  <Icon path={mdiInstagram} size="2rem" color={theme.colors.primaryLight} />
+                </IconContainer>
+                <IconContainer href="https://github.com/vik-wed" target="__blank" rel="noopener noreferrer">
+                  <Icon path={mdiGithub} size="2rem" color={theme.colors.primaryLight} />
+                </IconContainer>
+              </SideBar>
+            </Container>
+          </BodyContainer>
         </body>
       </StyleProvider>
     </html>
   )
 }
+
+const BodyContainer = styled.div`
+  height: 100vh;
+  width: 100vw;
+  background: ${theme.colors.backgroundLight};
+  padding: 5vh 5vw;
+`
 
 const floatAnimation = keyframes`
   0% {
