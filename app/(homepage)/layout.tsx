@@ -34,9 +34,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
                 </IconContainer>
                 {children}
               </Main>
-              <SubTitle>
-                Qualle <i>noun</i> - /kwɑːl.i/ quall-e - jellyfish
-              </SubTitle>
+              <SubTitle>Qualle - /kwɑːl.i/ quall-e - jellyfish</SubTitle>
               <SideBar>
                 <IconContainer href="https://www.linkedin.com/in/vikwedel/" target="__blank" rel="noopener noreferrer">
                   <Icon path={mdiLinkedin} size="2rem" color={theme.colors.primaryLight} />
