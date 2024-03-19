@@ -1,6 +1,6 @@
 "use client"
 
-import theme from "../styles/theme"
+import theme from "../../styles/theme"
 import { mdiGithub, mdiInstagram, mdiLinkedin } from "@mdi/js"
 import Icon from "@mdi/react"
 import Image from "next/image"

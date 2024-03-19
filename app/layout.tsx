@@ -3,8 +3,8 @@
 "use client"
 
 import StyleProvider from "../styles/StyleProvider"
-import HomepageLayout from "./homepage"
-import SubpageLayout from "./subpages"
+import HomepageLayout from "./layouts/homepage"
+import SubpageLayout from "./layouts/subpages"
 import { usePathname } from "next/navigation"
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {

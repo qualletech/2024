@@ -18,7 +18,7 @@ export default function Page() {
       setIsAnimating(false)
       setExpandedBlob(null)
       router.push(route)
-    }, 3000) // Adjust the duration as needed
+    }, 3000)
   }
   return (
     <Columns>
@@ -86,11 +86,7 @@ const expandAnimation = keyframes`
   }
   50% {
     transform: translateY(0px) scale(10); /* Expand the blob to fill the screen */
-    opacity: 0.2;
-  }
-  100% {
-    transform: translateY(0px) scale(0); /* Shrink the blob and fade out */
-    opacity: 0;
+    opacity: 1;
   }
 `
 
@@ -102,10 +98,10 @@ const Blob = styled.div<{ $background: string; $margin: string; $isAnimating: bo
   align-items: center;
   background: ${({ $background }) => `url(${$background})`} 0 0/105% 100% no-repeat;
   filter: drop-shadow(0 0.2rem 0.7rem #21219b40);
-  z-index: ${({ $expandedBlob }) => ($expandedBlob ? "50" : "20")}; /* Ensure expanded blob is on top */
+  z-index: ${({ $expandedBlob }) => ($expandedBlob ? "50" : "20")};
 
   animation-name: ${({ $isAnimating, $expandedBlob }) => ($isAnimating && $expandedBlob ? expandAnimation : "none")};
-  animation-duration: 10s;
+  animation-duration: 15s;
   pointer-events: ${({ $isAnimating }) => ($isAnimating ? "none" : "auto")};
   user-select: ${({ $isAnimating }) => ($isAnimating ? "none" : "auto")};
 
