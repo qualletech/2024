@@ -18,7 +18,7 @@ export default function Page() {
       setIsAnimating(false)
       setExpandedBlob(null)
       router.push(route)
-    }, 3000)
+    }, 2000)
   }
   return (
     <Columns>
@@ -101,7 +101,7 @@ const Blob = styled.div<{ $background: string; $margin: string; $isAnimating: bo
   z-index: ${({ $expandedBlob }) => ($expandedBlob ? "50" : "20")};
 
   animation-name: ${({ $isAnimating, $expandedBlob }) => ($isAnimating && $expandedBlob ? expandAnimation : "none")};
-  animation-duration: 15s;
+  animation-duration: 5s;
   pointer-events: ${({ $isAnimating }) => ($isAnimating ? "none" : "auto")};
   user-select: ${({ $isAnimating }) => ($isAnimating ? "none" : "auto")};
 
