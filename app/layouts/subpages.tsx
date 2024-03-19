@@ -15,9 +15,9 @@ const BACKGROUNDCOLOR = [
 export default function SubpageLayout({ children }: { children: React.ReactNode }) {
   const router = useRouter()
   const pathname = usePathname()
+  const color = BACKGROUNDCOLOR?.find((o) => o.path === pathname)?.color || ""
   const isAnimatedPath = pathname === "/projects" || pathname === "/about" || pathname === "/contact"
   const [isAnimating, setIsAnimating] = useState(isAnimatedPath)
-  const color = BACKGROUNDCOLOR?.find((o) => o.path === pathname)?.color || ""
 
   setTimeout(() => {
     setIsAnimating(false)
@@ -27,9 +27,14 @@ export default function SubpageLayout({ children }: { children: React.ReactNode 
     <Container>
       <EaseInTransition $isAnimating={isAnimating} $color={color} />
       <Main>
-        <IconContainer onClick={() => router.push("/")}>
-          <h1>Qualle Tech</h1>
-        </IconContainer>
+        <Row>
+          <IconContainer onClick={() => router.push("/")}>
+            <h1>Qualle Tech</h1>
+          </IconContainer>
+          <IconContainer onClick={() => router.push("/projects")}>Projects</IconContainer>
+          <IconContainer onClick={() => router.push("/about")}>About</IconContainer>
+          <IconContainer onClick={() => router.push("/contact")}>Contact</IconContainer>
+        </Row>
         <Logo>
           <Image src="/logo-dark.png" height={100} width={100} alt="Qualle Tech Logo" />
         </Logo>
@@ -83,6 +88,12 @@ const Logo = styled.div`
   right: 0;
 `
 
+const Row = styled.div`
+  display: grid;
+  grid-auto-flow: column;
+  align-items: center;
+`
+
 const Container = styled.div`
   height: 100vh;
   width: 100vw;
@@ -90,7 +101,7 @@ const Container = styled.div`
   display: grid;
   padding: 2rem;
   grid-gap: 1rem;
-  grid-template-rows: auto 1fr;
+  grid-template-rows: 1fr auto;
 `
 
 const EaseInTransition = styled.div<{ $isAnimating: boolean; $color: string }>`
@@ -137,4 +148,5 @@ const Main = styled.main`
   display: grid;
   grid-template-rows: auto 1fr;
   grid-gap: 1rem;
+  height: 100%;
 `
