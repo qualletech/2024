@@ -30,6 +30,7 @@ const Container = styled.div`
   display: grid;
   grid-gap: 1rem;
   align-content: start;
+  overflow: auto;
 `
 
 const DeployInfo = styled.p`
@@ -41,6 +42,7 @@ const DeployInfo = styled.p`
 const TextParagraph = styled.div`
   display: grid;
   grid-gap: 0.9rem;
+  overflow: auto;
 `
 
 const Text = styled.p`

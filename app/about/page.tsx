@@ -79,6 +79,7 @@ const Container = styled.div`
   grid-gap: 3rem;
   align-items: start;
   padding: 3rem 0;
+  overflow: auto;
 `
 
 const About = styled.div`

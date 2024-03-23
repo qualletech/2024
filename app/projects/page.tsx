@@ -17,6 +17,7 @@ const Container = styled.div`
   display: grid;
   grid-template-rows: auto 1fr;
   grid-gap: 1rem;
+  overflow: auto;
 `
 
 const Columns = styled.div`
@@ -24,4 +25,5 @@ const Columns = styled.div`
   grid-template-columns: 1fr 1fr 1fr 1fr;
   align-content: start;
   grid-gap: 1rem;
+  overflow: auto;
 `

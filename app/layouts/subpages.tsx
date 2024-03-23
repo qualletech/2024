@@ -85,8 +85,8 @@ const removeAnimation = keyframes`
 
 const Logo = styled.div`
   position: absolute;
-  top: 0;
-  right: 0;
+  top: 2rem;
+  right: 2rem;
 `
 
 const Row = styled.div`
@@ -96,13 +96,13 @@ const Row = styled.div`
 `
 
 const Container = styled.div`
-  height: 100vh;
-  width: 100vw;
+  height: 100dvh;
+  width: 100dvw;
   background: ${theme.colors.backgroundDark};
   display: grid;
-  padding: 2rem;
   grid-gap: 1rem;
   grid-template-rows: 1fr auto;
+  overflow: none;
 `
 
 const EaseInTransition = styled.div<{ $isAnimating: boolean; $color: string }>`
@@ -127,13 +127,12 @@ const Socials = styled.div`
 
 const Footer = styled.div`
   border-top: 0.5rem double ${theme.colors.neutralDark};
-  padding: 0.5rem 2rem;
+  padding: 1rem 2rem;
   align-items: center;
   justify-content: center;
   grid-template-columns: 1fr 1fr;
   display: grid;
   grid-gap: 1rem;
-  position: fixed;
   width: 100vw;
   bottom: 0;
   left: 0;
@@ -150,5 +149,7 @@ const Main = styled.main`
   display: grid;
   grid-template-rows: auto 1fr;
   grid-gap: 1rem;
-  height: 90%;
+  height: 100%;
+  padding: 2rem 2rem 0rem 2rem;
+  overflow: auto;
 `

@@ -95,11 +95,13 @@ const Container = styled.div`
   display: grid;
   grid-gap: 1rem;
   grid-template-rows: auto 1fr;
+  overflow: auto;
 `
 
 const Form = styled.div`
   display: grid;
   grid-gap: 1rem;
+  overflow: auto;
 `
 
 const Label = styled.label`
