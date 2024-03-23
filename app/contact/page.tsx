@@ -8,9 +8,10 @@ import styled from "styled-components"
 
 export default function Page() {
   const [formData, setFormData] = useState(null)
-  const [message, setMessage] = useState("")
+  const [message, setMessage] = useState("Send")
   const [isLoading, setIsLoading] = useState(false)
 
+  // TODO: add disabled state to button!
   const sendEmail = async () => {
     if (
       !formData ||
@@ -37,12 +38,15 @@ export default function Page() {
           template_params: formData,
         }),
       })
-      // email send here
+      setFormData(null)
       setIsLoading(false)
+      setMessage("Request sent")
     } catch (e) {
       setMessage("The email could not be sent please make sure you typed in your details correctly and try again")
     }
-    setMessage("")
+    setTimeout(() => {
+      setMessage("Send")
+    }, 10000)
   }
 
   return (
@@ -80,9 +84,8 @@ export default function Page() {
           />
         </Label>
         <Button type="button" onClick={sendEmail}>
-          {isLoading ? <Icon path={mdiLoading} spin size={0.8} /> : "Send"}
+          {isLoading ? <Icon path={mdiLoading} spin size={0.8} /> : message}
         </Button>
-        <p>{message}</p>
       </Form>
     </Container>
   )
