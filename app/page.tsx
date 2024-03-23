@@ -10,15 +10,14 @@ export default function Page() {
   const [expandedBlob, setExpandedBlob] = useState(null)
 
   const handleTileClick = (route: string) => {
-    router.prefetch(route)
     setIsAnimating(true)
     setExpandedBlob(route)
 
     setTimeout(() => {
       setIsAnimating(false)
       setExpandedBlob(null)
-      router.push(route)
-    }, 2000)
+    }, 500)
+    router.push(route)
   }
   return (
     <Columns>
@@ -77,15 +76,15 @@ const floatAnimation = keyframes`
 
 const expandAnimation = keyframes`
 0% {
-    transform: translateY(0px) scale(1); /* Center the blob and set initial scale */
+    transform: translateY(0px) scale(1);
     opacity: 1;
   }
   25% {
-    transform: translateY(0px) scale(10); /* Expand the blob to fill the screen */
+    transform: translateY(0px) scale(10);
     opacity: 1;
   }
-  50% {
-    transform: translateY(0px) scale(10); /* Expand the blob to fill the screen */
+  100% {
+    transform: translateY(0px) scale(10);
     opacity: 1;
   }
 `
@@ -101,7 +100,7 @@ const Blob = styled.div<{ $background: string; $margin: string; $isAnimating: bo
   z-index: ${({ $expandedBlob }) => ($expandedBlob ? "50" : "20")};
 
   animation-name: ${({ $isAnimating, $expandedBlob }) => ($isAnimating && $expandedBlob ? expandAnimation : "none")};
-  animation-duration: 5s;
+  animation-duration: 1s;
   pointer-events: ${({ $isAnimating }) => ($isAnimating ? "none" : "auto")};
   user-select: ${({ $isAnimating }) => ($isAnimating ? "none" : "auto")};
 

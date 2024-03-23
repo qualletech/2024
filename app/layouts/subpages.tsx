@@ -150,6 +150,6 @@ const Main = styled.main`
   grid-template-rows: auto 1fr;
   grid-gap: 1rem;
   height: 100%;
-  padding: 2rem 2rem 0rem 2rem;
+  padding: 2rem 0rem 0rem 2rem;
   overflow: auto;
 `

@@ -61,7 +61,7 @@ const floatAnimation = keyframes`
 const Logo = styled.div`
   position: absolute;
   bottom: 2.5rem;
-  right: 5rem;
+  right: 5.5rem;
   opacity: 60%;
   z-index: 10;
   animation-name: ${floatAnimation};

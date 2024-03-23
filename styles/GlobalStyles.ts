@@ -38,21 +38,17 @@ const GlobalStyles = createGlobalStyle`
   }
 
   ::-webkit-scrollbar {
-    width: 4px;
-    height: 4px;
-    position: absolute;
-    right: 0;
+    box-sizing: content-box;
+    width: 10px;
+    padding: 10px;
   }
 
-  ::-webkit-scrollbar-track {
-    background: transparent;
-    opacity: 0.2;
-  }
+
 
   ::-webkit-scrollbar-thumb {
-    background: ${({ theme }) => theme.colors.interactionDark};
+    background: ${({ theme }) => `${theme.colors.interactionDark}50`};
     opacity: 0.5;
-    border-radius: 8px;
+    border-radius: 1rem;
   }
 `
 

@@ -76,9 +76,9 @@ export default function Page() {
 const Container = styled.div`
   display: grid;
   grid-template-columns: 1fr 1fr;
-  grid-gap: 3rem;
+  grid-gap: 5rem;
   align-items: start;
-  padding: 3rem 0;
+  padding: 3rem 2rem 3rem 0;
   overflow: auto;
 `
 

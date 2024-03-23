@@ -96,6 +96,7 @@ const Container = styled.div`
   grid-gap: 1rem;
   grid-template-rows: auto 1fr;
   overflow: auto;
+  padding-right: 2rem;
 `
 
 const Form = styled.div`
@@ -114,6 +115,7 @@ const Input = styled.input`
   padding: 1rem;
   font-size: 1.2rem;
   color: ${theme.colors.neutralDark};
+  border-radius: 0.5rem;
 `
 
 const TextArea = styled.textarea`
@@ -121,6 +123,7 @@ const TextArea = styled.textarea`
   font-size: 1.2rem;
   color: ${theme.colors.neutralDark};
   resize: vertical;
+  border-radius: 0.5rem;
 `
 
 const Button = styled.button`
@@ -131,4 +134,5 @@ const Button = styled.button`
   &:hover {
     opacity: 0.8;
   }
+  border-radius: 0.5rem;
 `
