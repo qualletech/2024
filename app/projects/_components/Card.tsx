@@ -11,9 +11,17 @@ export default function Card({ projectInfo }: { projectInfo: ProjectInfo }) {
 
   return (
     <CardContainer onClick={() => router.push(path)}>
-      <ImageContainer>
-        <Image src={coverImg} layout="fill" alt={alt} style={{ borderRadius: "1rem 1rem 0 0 " }} />
-      </ImageContainer>
+      <Image
+        src={coverImg}
+        alt={alt}
+        width={300}
+        height={200}
+        style={{
+          borderRadius: "1rem 1rem 0 0 ",
+          width: "100%",
+          height: "auto",
+        }}
+      />
       <Info>
         <CardTitle>{title}</CardTitle>
         <p>{desc}</p>
@@ -34,11 +42,6 @@ const CardContainer = styled.div`
   &:hover {
     opacity: 80%;
   }
-`
-
-const ImageContainer = styled.div`
-  width: 100%;
-  min-height: 10rem;
 `
 
 const CardTitle = styled.p`

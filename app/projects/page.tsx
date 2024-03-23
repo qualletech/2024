@@ -21,7 +21,7 @@ const Container = styled.div`
 
 const Columns = styled.div`
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
   align-content: start;
   grid-gap: 1rem;
 `

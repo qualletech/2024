@@ -17,15 +17,15 @@ export const PROJECTS: Array<ProjectInfo> = [
   },
   {
     path: "/projects/admin-tool",
-    coverImg: "/seed.png",
-    alt: "Admin Tool Cover Image",
-    title: "Operational System - Admin Tools",
+    coverImg: "/admin-staff.png",
+    alt: "Admin Tool and Staff Portal Cover Image",
+    title: "Admin Dashboard & Staff Portal",
     desc: "Admin Dashboard and Staff Portal for Culinary Services",
     timeline: "In Development - to be deployed in April 2024",
   },
   {
     path: "/projects/sourcing-tool",
-    coverImg: "/seed.png",
+    coverImg: "/sourcing-tool.png",
     alt: "Sourcing Tool Cover Image",
     title: "Material Sourcing Tool",
     desc: "Monday Integration to source stones for a Bespoke Jewelry Designer",
@@ -33,7 +33,7 @@ export const PROJECTS: Array<ProjectInfo> = [
   },
   {
     path: "/projects/internal-database",
-    coverImg: "/seed.png",
+    coverImg: "/prideworks-backboard.png",
     alt: "Internal Database Tool Cover Image",
     title: "Internal Database",
     desc: "Internal Database Tool for Non-Profits",
@@ -47,4 +47,10 @@ export const PROJECTS: Array<ProjectInfo> = [
     desc: "Demo Application for Food and Symptom Tracker",
     timeline: "Deployed April 2023",
   },
+]
+
+export const BACKGROUNDCOLOR = [
+  { path: "/projects", color: "#66005E" },
+  { path: "/about", color: "#02007A" },
+  { path: "/contact", color: "#8F0083" },
 ]

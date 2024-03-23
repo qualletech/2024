@@ -1,16 +1,11 @@
 "use client"
 
 import theme from "../../styles/theme"
+import { BACKGROUNDCOLOR } from "../projects/CONSTANTS"
 import Image from "next/image"
 import { usePathname, useRouter } from "next/navigation"
 import { useState } from "react"
 import styled, { keyframes } from "styled-components"
-
-const BACKGROUNDCOLOR = [
-  { path: "/projects", color: "#66005E" },
-  { path: "/about", color: "#02007A" },
-  { path: "/contact", color: "#8F0083" },
-]
 
 export default function SubpageLayout({ children }: { children: React.ReactNode }) {
   const router = useRouter()
@@ -31,9 +26,15 @@ export default function SubpageLayout({ children }: { children: React.ReactNode 
           <IconContainer onClick={() => router.push("/")}>
             <h1>Qualle Tech</h1>
           </IconContainer>
-          <IconContainer onClick={() => router.push("/projects")}>Projects</IconContainer>
-          <IconContainer onClick={() => router.push("/about")}>About</IconContainer>
-          <IconContainer onClick={() => router.push("/contact")}>Contact</IconContainer>
+          <IconContainer onClick={() => router.push("/projects")} $active={pathname === "/projects"}>
+            Projects
+          </IconContainer>
+          <IconContainer onClick={() => router.push("/about")} $active={pathname === "/about"}>
+            About
+          </IconContainer>
+          <IconContainer onClick={() => router.push("/contact")} $active={pathname === "/contact"}>
+            Contact
+          </IconContainer>
         </Row>
         <Logo>
           <Image src="/logo-dark.png" height={100} width={100} alt="Qualle Tech Logo" />
@@ -137,7 +138,8 @@ const Footer = styled.div`
   bottom: 0;
   left: 0;
 `
-const IconContainer = styled.a`
+const IconContainer = styled.a<{ $active?: boolean }>`
+  text-decoration: ${({ $active }) => ($active ? "underline" : "none")};
   cursor: pointer;
   &:hover {
     opacity: 80%;
@@ -148,5 +150,5 @@ const Main = styled.main`
   display: grid;
   grid-template-rows: auto 1fr;
   grid-gap: 1rem;
-  height: 100%;
+  height: 90%;
 `

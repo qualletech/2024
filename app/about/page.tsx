@@ -13,7 +13,7 @@ export default function Page() {
           jellyfish
         </p>
         <AboutBlock>
-          <p>'Qualle' embodies the essence of what we strive to achieve in our work.</p>
+          <p>'Qualle' the german word for jellyfish, embodies the essence of what we strive to achieve in our work.</p>
 
           <p>
             Jellyfish are creatures known for their ability to go with the flow, adapt to their surroundings, and
@@ -76,9 +76,9 @@ export default function Page() {
 const Container = styled.div`
   display: grid;
   grid-template-columns: 1fr 1fr;
-  grid-gap: 2rem;
-  padding: 1rem;
+  grid-gap: 3rem;
   align-items: start;
+  padding: 3rem 0;
 `
 
 const About = styled.div`
