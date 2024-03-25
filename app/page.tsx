@@ -137,8 +137,16 @@ const Blob = styled.div<{ $background: string; $margin: string; $isAnimating: bo
       $isAnimating && $expandedBlob ? expandAnimationPortrait : "none"};
     animation-duration: 5s;
   }
+  @media screen and (max-width: 769px) and (orientation: portrait) {
+    left: ${({ $margin }) => `calc(${$margin}px / 2)`};
+    background: ${({ $background }) => `url(${$background})`} 0 0/100% 110% no-repeat;
+  }
 `
 
 const BlobText = styled.h3<{ $isAnimating: boolean }>`
   opacity: ${({ $isAnimating }) => ($isAnimating ? 0 : 1)};
+  @media screen and (max-width: 769px) and (orientation: portrait) {
+    text-align: center;
+    font-size: 1.2rem;
+  }
 `

@@ -44,6 +44,9 @@ const BodyContainer = styled.div`
   background: ${theme.colors.backgroundLight};
   padding: 5vh 5vw;
   overflow: hidden;
+  @media screen and (max-width: 769px) and (orientation: portrait) {
+    padding: 4rem 2rem;
+  }
 `
 
 const floatAnimation = keyframes`
@@ -98,6 +101,10 @@ const SubTitle = styled.p`
     bottom: 1rem;
     left: 2.5rem;
   }
+  @media screen and (max-width: 769px) and (orientation: portrait) {
+    font-size: 1rem;
+    bottom: 1.5rem;
+  }
 `
 
 const SideBar = styled.div`
@@ -116,6 +123,10 @@ const SideBar = styled.div`
     left: 1rem;
     justify-content: space-between;
     height: auto;
+  }
+  @media screen and (max-width: 769px) and (orientation: portrait) {
+    padding: 0 1rem;
+    width: 90%;
   }
 `
 

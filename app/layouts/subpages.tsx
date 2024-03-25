@@ -93,6 +93,19 @@ const Logo = styled.div`
     top: 1rem;
     right: 2.5rem;
   }
+  @media screen and (max-width: 769px) and (orientation: portrait) {
+    top: 3rem;
+  }
+  > img {
+    @media screen and (max-width: 1023px) and (orientation: portrait) {
+      height: 5rem;
+      width: 5rem;
+    }
+    @media screen and (max-width: 769px) and (orientation: portrait) {
+      height: 3rem;
+      width: 3rem;
+    }
+  }
 `
 
 const NavRow = styled.div`

@@ -28,4 +28,7 @@ const Columns = styled.div`
   grid-gap: 1rem;
   overflow: auto;
   padding-right: 0.5rem;
+  @media screen and (max-width: 1023px) and (orientation: portrait) {
+    grid-template-columns: unset;
+  }
 `
