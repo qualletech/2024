@@ -68,6 +68,10 @@ const Logo = styled.div`
   animation-duration: 5s;
   animation-iteration-count: infinite;
   animation-direction: alternate;
+  @media screen and (max-width: 1023px) and (orientation: portrait) {
+    bottom: 5rem;
+    right: 4.5rem;
+  }
 `
 
 const Container = styled.div`
@@ -75,7 +79,6 @@ const Container = styled.div`
   height: 100%;
   display: grid;
   border-radius: 0.5rem;
-  grid-template-columns: 95% 5%;
   padding: 2rem;
   grid-gap: 1rem;
   overflow: none;
@@ -90,6 +93,11 @@ const SubTitle = styled.p`
   bottom: 1rem;
   transform-origin: 0 0;
   transform: rotate(-90deg);
+  @media screen and (max-width: 1023px) and (orientation: portrait) {
+    transform: rotate(0deg);
+    bottom: 1rem;
+    left: 2.5rem;
+  }
 `
 
 const SideBar = styled.div`
@@ -100,6 +108,15 @@ const SideBar = styled.div`
   position: fixed;
   right: 1rem;
   top: 5vh;
+  @media screen and (max-width: 1023px) and (orientation: portrait) {
+    grid-auto-flow: column;
+    top: 1rem;
+    width: 95%;
+    padding: 0 2rem;
+    left: 1rem;
+    justify-content: space-between;
+    height: auto;
+  }
 `
 
 const IconContainer = styled.a`

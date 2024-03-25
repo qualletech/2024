@@ -39,14 +39,14 @@ const GlobalStyles = createGlobalStyle`
 
   ::-webkit-scrollbar {
     box-sizing: content-box;
-    width: 10px;
-    padding: 10px;
+    width: 1rem;
+    padding: 1rem;
   }
 
 
 
   ::-webkit-scrollbar-thumb {
-    background: ${({ theme }) => `${theme.colors.interactionDark}50`};
+    background: ${({ theme }) => `${theme.colors.secondaryDark}`};
     opacity: 0.5;
     border-radius: 1rem;
   }
