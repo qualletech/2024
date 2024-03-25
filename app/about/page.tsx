@@ -80,6 +80,11 @@ const Container = styled.div`
   align-items: start;
   padding: 3rem 2rem 3rem 0;
   overflow: auto;
+  @media screen and (max-width: 1023px) and (orientation: portrait) {
+    grid-template-columns: unset;
+    grid-gap: 2rem;
+    padding: 0 2rem 2rem 0;
+  }
 `
 
 const About = styled.div`
@@ -90,4 +95,9 @@ const About = styled.div`
 const AboutBlock = styled.div`
   display: grid;
   grid-gap: 0.5rem;
+  @media screen and (max-width: 1023px) and (orientation: portrait) {
+    > p {
+      font-size: 1.2rem;
+    }
+  }
 `
