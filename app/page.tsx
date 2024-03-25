@@ -23,7 +23,7 @@ export default function Page() {
     <Columns>
       <Blob
         onClick={() => handleTileClick("/projects")}
-        $background="/blob1.svg"
+        $background="/2024/blob1.svg"
         $margin="-30"
         $isAnimating={isAnimating}
         $expandedBlob={expandedBlob === "/projects"}
@@ -32,7 +32,7 @@ export default function Page() {
       </Blob>
       <Blob
         onClick={() => handleTileClick("/about")}
-        $background="/blob2.svg"
+        $background="/2024/blob2.svg"
         $margin="60"
         $isAnimating={isAnimating}
         $expandedBlob={expandedBlob === "/about"}
@@ -41,7 +41,7 @@ export default function Page() {
       </Blob>
       <Blob
         onClick={() => handleTileClick("/contact")}
-        $background="/blob3.svg"
+        $background="/2024/blob3.svg"
         $margin="-100"
         $isAnimating={isAnimating}
         $expandedBlob={expandedBlob === "/contact"}
