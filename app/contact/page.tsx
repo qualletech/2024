@@ -103,6 +103,11 @@ const Form = styled.div`
   display: grid;
   grid-gap: 1rem;
   overflow: auto;
+  @media screen and (max-width: 1023px) and (orientation: portrait) {
+    align-items: start;
+    align-content: start;
+    grid-gap: 2rem;
+  }
 `
 
 const Label = styled.label`
