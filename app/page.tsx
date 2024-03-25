@@ -57,6 +57,9 @@ const Columns = styled.div`
   grid-auto-flow: column;
   align-items: space-between;
   padding: 0;
+  @media screen and (max-width: 1023px) and (orientation: portrait) {
+    grid-auto-flow: row;
+  }
 `
 
 const floatAnimation = keyframes`
@@ -75,7 +78,7 @@ const floatAnimation = keyframes`
 `
 
 const expandAnimation = keyframes`
-0% {
+  0% {
     transform: translateY(0px) scale(1);
     opacity: 1;
   }
@@ -85,6 +88,21 @@ const expandAnimation = keyframes`
   }
   100% {
     transform: translateY(0px) scale(10);
+    opacity: 1;
+  }
+`
+
+const expandAnimationPortrait = keyframes`
+  0% {
+    transform: translateX(0px) scale(1);
+    opacity: 1;
+  }
+  25% {
+    transform: translateX(0px) scale(100);
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(0px) scale(100);
     opacity: 1;
   }
 `
@@ -109,6 +127,15 @@ const Blob = styled.div<{ $background: string; $margin: string; $isAnimating: bo
     animation-name: ${({ $isAnimating }) => ($isAnimating ? "none" : floatAnimation)};
     animation-duration: ${({ $isAnimating }) => ($isAnimating ? "none" : "5s")};
     animation-iteration-count: ${({ $isAnimating }) => ($isAnimating ? "none" : "infinite")};
+  }
+
+  @media screen and (max-width: 1023px) and (orientation: portrait) {
+    top: 0;
+    left: ${({ $margin }) => `${$margin}px`};
+    background: ${({ $background }) => `url(${$background})`} 0 0/100% 102% no-repeat;
+    animation-name: ${({ $isAnimating, $expandedBlob }) =>
+      $isAnimating && $expandedBlob ? expandAnimationPortrait : "none"};
+    animation-duration: 5s;
   }
 `
 
