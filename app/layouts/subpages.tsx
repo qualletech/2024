@@ -22,27 +22,29 @@ export default function SubpageLayout({ children }: { children: React.ReactNode 
     <Container>
       <EaseInTransition $isAnimating={isAnimating} $color={color} />
       <Main>
-        <Row>
+        <NavRow>
           <IconContainer onClick={() => router.push("/")}>
             <h1>Qualle Tech</h1>
           </IconContainer>
-          <IconContainer onClick={() => router.push("/projects")} $active={pathname === "/projects"}>
-            Projects
-          </IconContainer>
-          <IconContainer onClick={() => router.push("/about")} $active={pathname === "/about"}>
-            About
-          </IconContainer>
-          <IconContainer onClick={() => router.push("/contact")} $active={pathname === "/contact"}>
-            Contact
-          </IconContainer>
-        </Row>
+          <Row>
+            <IconContainer onClick={() => router.push("/projects")} $active={pathname === "/projects"}>
+              Projects
+            </IconContainer>
+            <IconContainer onClick={() => router.push("/about")} $active={pathname === "/about"}>
+              About
+            </IconContainer>
+            <IconContainer onClick={() => router.push("/contact")} $active={pathname === "/contact"}>
+              Contact
+            </IconContainer>
+          </Row>
+        </NavRow>
         <Logo>
           <Image src="/logo-dark.png" height={100} width={100} alt="Qualle Tech Logo" />
         </Logo>
         {children}
       </Main>
       <Footer>
-        <p>Qualle - /kwɑːl.i/ quall-e - jellyfish</p>
+        <FooterText>Qualle - /kwɑːl.i/ quall-e - jellyfish</FooterText>
         <Socials>
           <IconContainer href="https://www.linkedin.com/in/vikwedel/" target="__blank" rel="noopener noreferrer">
             LinkedIn
@@ -87,12 +89,31 @@ const Logo = styled.div`
   position: absolute;
   top: 2rem;
   right: 2rem;
+  @media screen and (max-width: 1023px) and (orientation: portrait) {
+    top: 1rem;
+    right: 2.5rem;
+  }
+`
+
+const NavRow = styled.div`
+  display: grid;
+  grid-auto-flow: column;
+  align-items: center;
+  @media screen and (max-width: 1023px) and (orientation: portrait) {
+    grid-auto-flow: row;
+    align-items: start;
+  }
 `
 
 const Row = styled.div`
   display: grid;
   grid-auto-flow: column;
   align-items: center;
+  @media screen and (max-width: 1023px) and (orientation: portrait) {
+    justify-content: space-between;
+    width: 90%;
+    padding: 1.5rem 0;
+  }
 `
 
 const Container = styled.div`
@@ -123,6 +144,12 @@ const Socials = styled.div`
   display: grid;
   grid-gap: 1rem;
   justify-items: end;
+  @media screen and (max-width: 1023px) and (orientation: portrait) {
+    grid-template-columns: unset;
+    grid-auto-flow: column;
+    justify-items: unset;
+    justify-content: space-between;
+  }
 `
 
 const Footer = styled.div`
@@ -136,12 +163,25 @@ const Footer = styled.div`
   width: 100vw;
   bottom: 0;
   left: 0;
+  @media screen and (max-width: 1023px) and (orientation: portrait) {
+    grid-template-columns: unset;
+    grid-template-rows: 1fr 1fr;
+  }
+`
+
+const FooterText = styled.p`
+  @media screen and (max-width: 1023px) and (orientation: portrait) {
+    font-size: 1.2rem;
+  }
 `
 const IconContainer = styled.a<{ $active?: boolean }>`
   text-decoration: ${({ $active }) => ($active ? "underline" : "none")};
   cursor: pointer;
   &:hover {
     opacity: 80%;
+  }
+  @media screen and (max-width: 1023px) and (orientation: portrait) {
+    font-size: 1.2rem;
   }
 `
 
