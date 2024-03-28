@@ -21,7 +21,7 @@ export default function ProjectDetailPage({ projectDetails }) {
         <h3>Unlocking the Flow</h3>
         {flow}
       </TextParagraph>
-      <Image src={coverImgSrc} height={300} width={400} alt={coverImgAlt} />
+      <Image src={coverImgSrc} height={450} width={800} alt={coverImgAlt} />
       <p>Image shows mock data.</p>
     </Container>
   )
