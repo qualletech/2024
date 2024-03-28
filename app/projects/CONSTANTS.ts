@@ -9,7 +9,7 @@ export interface ProjectInfo {
 export const PROJECTS: Array<ProjectInfo> = [
   {
     path: "/projects/mic-drop",
-    coverImg: "/2024/seed.png",
+    coverImg: "/2024/mic-drop.png",
     alt: "Mic Drop Cover Image",
     title: "Mic Drop",
     desc: "Open Mic Event Dashboard for Comedians in NYC",

@@ -1,36 +1,45 @@
 "use client"
 
 import Separator from "../_components/Separator"
+import Image from "next/image"
 import styled from "styled-components"
 
 export default function Page() {
   return (
     <Container>
       <h2>Admin OS & Mobile Staff Portal</h2>
-      <DeployInfo>In Development - to be deployed in April 2024</DeployInfo>
-      <Text>These tools were developed under contract with Square Mile Labs.</Text>
+      <DeployInfo>In Development - Planned Deployment in April 2024</DeployInfo>
+      <Text>These solutions were developed in partnership with Square Mile Labs.</Text>
       <Separator />
       <TextParagraph>
-        <h3>Obstacles</h3>
+        <h3>Challenges</h3>
         <Text>
-          A culinary service client that pairs their clients with professionally trined, highly referred chefs for
-          at-home dining experiences was looking for a way to optimize their operational flow. A lot of their systems
-          were still spreadsheet based and required a lot of manual data entry and matching. Systems weren't centralized
-          and created mishaps and effort for the admin team.
+          Our culinary service client, which connects customers with top-tier chefs for personalized at-home dining
+          experiences, faced operational inefficiencies due to reliance on spreadsheet-based systems. Manual data entry
+          and matching processes were time-consuming, and the lack of centralization led to errors and added effort for
+          the admin team.
         </Text>
       </TextParagraph>
       <TextParagraph>
         <h3>Unlocking the Flow</h3>
         <Text>
-          Square Mile Labs set out to create a dedicated admin dashboard for the client. Centralizing databases,
-          statistics, service management, automated pricing, staff matching and payment systems in one portal.
+          To address these challenges, Square Mile Labs embarked on creating a dedicated admin dashboard for the client.
+          This comprehensive solution centralizes databases, statistics, service management, automated pricing, staff
+          matching, and payment systems within a single portal.
         </Text>
         <Text>
-          Additionally SML developed a Staff Portal for staff to review, accept or decline service requests as well as
-          keep track of expenses for accepted services.
+          Moreover, Square Mile Labs developed a Mobile Staff Portal for staff members to streamline service request
+          reviews, acceptances, or declinations. The portal also enables staff to track expenses associated with
+          accepted services, enhancing transparency and efficiency in managing operations.
         </Text>
       </TextParagraph>
-      <p>Images show mock data.</p>
+      <Image
+        src="/2024/admin-tool.png"
+        height={300}
+        width={400}
+        alt="Overview of Admin Operational Dashboard and Staff Portal Project"
+      />
+      <p>Image shows mock data.</p>
     </Container>
   )
 }
@@ -51,7 +60,6 @@ const DeployInfo = styled.p`
 const TextParagraph = styled.div`
   display: grid;
   grid-gap: 0.9rem;
-  overflow: auto;
 `
 
 const Text = styled.p`

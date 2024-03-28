@@ -1,44 +1,46 @@
 "use client"
 
 import Separator from "../_components/Separator"
+import Image from "next/image"
 import styled from "styled-components"
 
 export default function Page() {
   return (
     <Container>
       <h2>Seed - Food & Symptom Tracker</h2>
-      <DeployInfo>Deployed in April 2023</DeployInfo>
-      <Text>Seed was developed in collaboration with x other developers.</Text>
+      <DeployInfo>Launched in April 2023</DeployInfo>
+      <Text>Seed was crafted in collaboration with 4 other independent developers.</Text>
       <Separator />
       <TextParagraph>
-        <h3>Obstacles</h3>
+        <h3>Challenges</h3>
         <Text>
-          Users with food sensitivities or allergies oftentimes struggle with being able to narrow down which foods or
-          ingredients trigger their symptoms. Food diaries have to be kept and carried around making the experience less
-          than ideal and very cumbersome. Additionally when figuring out the actual triggers it's hard to find patterns
-          just by looking at a notebook or spreadsheet.
+          Individuals with food sensitivities or allergies often face difficulties pinpointing which foods or
+          ingredients trigger their symptoms. Traditional food diaries require constant maintenance and are inconvenient
+          to carry around, leading to a less-than-optimal user experience. Moreover, identifying patterns solely through
+          manual tracking in notebooks or spreadsheets can be a daunting task.
         </Text>
       </TextParagraph>
       <TextParagraph>
         <h3>Unlocking the Flow</h3>
         <Text>
-          With Seed we set out to develop an app that would make users lives easier. The app combines an intuitive user
-          interface with a powerful algorithm.
+          With Seed, our aim was to simplify users' lives. The app seamlessly integrates an intuitive user interface
+          with a robust algorithm.
         </Text>
         <Text>
-          Users can track their food intake utilizing our rich database of ingredients. Additionally users can also
-          track any symptoms as they arise.
+          Users can effortlessly log their food intake using our extensive ingredient database. Additionally, they can
+          monitor any symptoms as they occur.
         </Text>
         <Text>
-          We understand that the digestion period varies and consider that symptoms can develop after multiple hours.
-          Our algorithm uses these insights to calculate which foods are most likely to cause sensitivies and symptoms.
+          Recognizing that digestion times vary and symptoms may manifest hours after consumption, our algorithm
+          leverages these insights to predict which foods are likely to cause sensitivities and symptoms.
         </Text>
         <Text>
-          Once enough data has been gathered the application is able to display multiple graphs to showcase correlations
-          between food intake and experienced symptoms to help our users narrow down food-based triggers.
+          As users accumulate data, the app generates multiple graphs that illustrate correlations between food
+          consumption and experienced symptoms, empowering users to identify food-based triggers more effectively.
         </Text>
       </TextParagraph>
-      <p>Images show mock data.</p>
+      <Image src="/2024/seed.png" height={300} width={400} alt="Overview of Seed Project" />
+      <p>Image shows mock data.</p>
     </Container>
   )
 }
@@ -59,7 +61,6 @@ const DeployInfo = styled.p`
 const TextParagraph = styled.div`
   display: grid;
   grid-gap: 0.9rem;
-  overflow: auto;
 `
 
 const Text = styled.p`
