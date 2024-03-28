@@ -1,6 +1,6 @@
 "use client"
 
-import Separator from "../_components/Separator"
+import Separator from "../../_components/Separator"
 import Image from "next/image"
 import styled from "styled-components"
 

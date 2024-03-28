@@ -1,12 +1,13 @@
 "use client"
 
-import Separator from "../_components/Separator"
+import PageContainer from "../../_components/PageContainer"
+import Separator from "../../_components/Separator"
 import Image from "next/image"
 import styled from "styled-components"
 
 export default function Page() {
   return (
-    <Container>
+    <PageContainer>
       <h2>Seed - Food & Symptom Tracker</h2>
       <DeployInfo>Launched in April 2023</DeployInfo>
       <Text>Seed was crafted in collaboration with 4 other independent developers.</Text>
@@ -41,16 +42,9 @@ export default function Page() {
       </TextParagraph>
       <Image src="/2024/seed.png" height={300} width={400} alt="Overview of Seed Project" />
       <p>Image shows mock data.</p>
-    </Container>
+    </PageContainer>
   )
 }
-
-const Container = styled.div`
-  display: grid;
-  grid-gap: 1.5rem;
-  align-content: start;
-  overflow: auto;
-`
 
 const DeployInfo = styled.p`
   font-style: italic;

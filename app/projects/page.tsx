@@ -1,6 +1,6 @@
 "use client"
 
-import Card from "./_components/Card"
+import Card from "../_components/Card"
 import { PROJECTS } from "./CONSTANTS"
 import styled from "styled-components"
 

@@ -1,6 +1,6 @@
 "use client"
 
-import { ProjectInfo } from "../CONSTANTS"
+import { ProjectInfo } from "../projects/CONSTANTS"
 import Image from "next/image"
 import { useRouter } from "next/navigation"
 import styled from "styled-components"
