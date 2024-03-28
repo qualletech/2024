@@ -1,6 +1,7 @@
 "use client"
 
 import theme from "../../styles/theme"
+import PageContainer from "../_components/PageContainer"
 import { mdiLoading } from "@mdi/js"
 import Icon from "@mdi/react"
 import { useState } from "react"
@@ -50,7 +51,7 @@ export default function Page() {
   }
 
   return (
-    <Container>
+    <PageContainer>
       <h2>Contact Us</h2>
       <Form>
         <Label>
@@ -87,22 +88,14 @@ export default function Page() {
           {isLoading ? <Icon path={mdiLoading} spin size={0.8} /> : message}
         </Button>
       </Form>
-    </Container>
+    </PageContainer>
   )
 }
-
-const Container = styled.div`
-  display: grid;
-  grid-gap: 1rem;
-  grid-template-rows: auto 1fr;
-  overflow: auto;
-  padding-right: 2rem;
-`
-
 const Form = styled.div`
   display: grid;
   grid-gap: 1rem;
   overflow: auto;
+  padding-right: 2rem;
   @media screen and (max-width: 1023px) and (orientation: portrait) {
     align-items: start;
     align-content: start;
