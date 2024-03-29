@@ -24,4 +24,7 @@ const Columns = styled.div`
   @media screen and (max-width: 1023px) and (orientation: portrait) {
     grid-template-columns: unset;
   }
+  @media screen and (max-width: 769px) and (orientation: landscape) {
+    grid-template-columns: 1fr 1fr;
+  }
 `

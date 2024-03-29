@@ -26,7 +26,7 @@ export default function ProjectDetailPage({ projectDetails }) {
         </ProjectInfo>
         <ImageInfo>
           <ImageContainer>
-            <Image src={`${process.env.BASEPATH}/${coverImgSrc}`} alt={coverImgAlt} width={400} height={200} />
+            <Image src={coverImgSrc} alt={coverImgAlt} width={400} height={200} />
           </ImageContainer>
           <p>Image shows mock data.</p>
         </ImageInfo>
@@ -50,10 +50,8 @@ const DeployInfo = styled.p`
 const ImageContainer = styled.div`
   font-size: 0;
   box-sizing: content-box;
-  @media screen and (max-width: 769px) and (orientation: portrait) {
-    display: none;
-  }
   > img {
+    border-radius: 1rem;
     width: 100%;
     height: auto;
   }
@@ -65,6 +63,11 @@ const Columns = styled.div`
   grid-gap: 5rem;
   overflow: auto;
   padding-right: 2rem;
+  @media screen and (max-width: 769px) {
+    grid-template-columns: unset;
+    overflow: unset;
+    grid-gap: 1rem;
+  }
 `
 
 const ProjectInfo = styled.div`
@@ -74,5 +77,6 @@ const ProjectInfo = styled.div`
 
 const ImageInfo = styled.div`
   display: grid;
-  align-items: center;
+  grid-gap: 0.5rem;
+  align-content: center;
 `

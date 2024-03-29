@@ -99,7 +99,7 @@ const Form = styled.div`
   @media screen and (max-width: 1023px) and (orientation: portrait) {
     align-items: start;
     align-content: start;
-    grid-gap: 2rem;
+    grid-gap: 1.5rem;
   }
 `
 

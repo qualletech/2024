@@ -11,7 +11,7 @@ export default function Page() {
         collab: "This tool was developed in collaboration with Square Mile Labs.",
         challenges: <Challenges />,
         flow: <Flow />,
-        coverImgSrc: "sourcing-tool.png",
+        coverImgSrc: "/sourcing-tool.png",
         coverImgAlt: "Overview of Monday Sourcing Tool Integration Project",
       }}
     />

@@ -11,7 +11,7 @@ export default function Page() {
         collab: "These solutions were developed in partnership with Square Mile Labs.",
         challenges: <Challenges />,
         flow: <Flow />,
-        coverImgSrc: "admin-tool.png",
+        coverImgSrc: "/admin-staff.png",
         coverImgAlt: "Overview of Admin Operational Dashboard and Staff Portal Project",
       }}
     />

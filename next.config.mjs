@@ -6,8 +6,11 @@ const nextConfig = {
    * @see https://nextjs.org/docs/app/building-your-application/deploying/static-exports
    */
   output: "export",
-  assetPrefix: process.env.ASSETPREFIX,
-  basePath: process.env.BASEPATH,
+  assetPrefix: `${process.env.ASSETPREFIX}`,
+  basePath: `${process.env.BASEPATH}`,
+  compiler: {
+    styledComponents: true,
+  },
 
   /**
    * Disable server-based image optimization. Next.js does not support

@@ -14,6 +14,7 @@ const GlobalStyles = createGlobalStyle`
     -webkit-font-smoothing: antialiased;
     position: relative;
     color: ${({ theme }) => theme.colors.primaryDark};
+   -webkit-tap-highlight-color: transparent;
   }
 
   h1 {
@@ -21,6 +22,10 @@ const GlobalStyles = createGlobalStyle`
     text-transform: uppercase;
     margin: 0;
     font-size: 3rem;
+    @media screen and (max-width: 769px) and (orientation: portrait) {
+      font-size: 2.5rem;
+      width: 80%;
+    }
   }
 
   h2 {
@@ -29,12 +34,18 @@ const GlobalStyles = createGlobalStyle`
     font-size: 2.5rem;
     color: ${({ theme }) => theme.colors.secondaryDark};
     font-weight: 400;
+    @media screen and (max-width: 769px) and (orientation: portrait) {
+      font-size: 2rem;
+    }
   }
 
   h3 {
     font-size: 2rem;
     margin: 0;
     font-weight: 400;
+    @media screen and (max-width: 769px) and (orientation: portrait) {
+      font-size: 1.8rem;
+    }
   }
 
   ::-webkit-scrollbar {

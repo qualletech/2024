@@ -12,7 +12,7 @@ export default function Card({ projectInfo }: { projectInfo: ProjectInfo }) {
   return (
     <CardContainer onClick={() => router.push(path)}>
       <ImageContainer>
-        <Image src={`${process.env.BASEPATH}/${coverImg}`} alt={alt} width={400} height={200} />
+        <Image src={coverImg} alt={alt} width={400} height={200} />
       </ImageContainer>
       <Info>
         <CardTitle>{title}</CardTitle>
@@ -34,12 +34,12 @@ const CardContainer = styled.div`
   &:hover {
     opacity: 80%;
   }
-  @media screen and (max-width: 1023px) and (orientation: portrait) {
+  @media screen and (max-width: 1023px) {
     grid-template-columns: 1fr 2fr;
     align-items: center;
     grid-gap: 1rem;
   }
-  @media screen and (max-width: 769px) and (orientation: portrait) {
+  @media screen and (max-width: 769px) {
     grid-template-columns: 1fr;
     padding: 1rem;
   }
@@ -47,7 +47,7 @@ const CardContainer = styled.div`
 const ImageContainer = styled.div`
   font-size: 0;
   box-sizing: content-box;
-  @media screen and (max-width: 769px) and (orientation: portrait) {
+  @media screen and (max-width: 769px) {
     display: none;
   }
   > img {
@@ -55,7 +55,7 @@ const ImageContainer = styled.div`
     width: 100%;
     height: auto;
 
-    @media screen and (max-width: 1023px) and (orientation: portrait) {
+    @media screen and (max-width: 1023px) {
       border-radius: 1rem 0 0 1rem;
     }
   }
@@ -67,26 +67,21 @@ const CardTitle = styled.h5`
   @media screen and (max-width: 1023px) and (orientation: portrait) {
     font-size: 1.5rem;
   }
-  @media screen and (max-width: 769px) and (orientation: portrait) {
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-  }
 `
 
 const Info = styled.div`
   padding: 0 0.5rem 0.5rem 0.5rem;
   grid-gap: 0.5rem;
   display: grid;
-  @media screen and (max-width: 1023px) and (orientation: portrait) {
+  @media screen and (max-width: 1023px) {
     padding: 0 0.5rem;
   }
   > p,
   i {
-    @media screen and (max-width: 1023px) and (orientation: portrait) {
+    @media screen and (max-width: 1023px) {
       font-size: 1.2rem;
     }
-    @media screen and (max-width: 769px) and (orientation: portrait) {
+    @media screen and (max-width: 769px) {
       white-space: nowrap;
       overflow: hidden;
       text-overflow: ellipsis;

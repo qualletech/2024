@@ -11,7 +11,7 @@ export default function Page() {
         collab: "Backboard was created in partnership with Square Mile Labs.",
         challenges: <Challenges />,
         flow: <Flow />,
-        coverImgSrc: "prideworks-backboard.png",
+        coverImgSrc: "/prideworks-backboard.png",
         coverImgAlt: "Overview of Backboard Database and Workflow Automation Project",
       }}
     />

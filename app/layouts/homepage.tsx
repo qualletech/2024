@@ -12,7 +12,7 @@ export default function HomepageLayout({ children }: { children: React.ReactNode
   return (
     <BodyContainer>
       <Logo>
-        <Image src={`${process.env.BASEPATH}/logo-dark.png`} height={200} width={200} alt="Qualle Tech Logo" />
+        <Image src={`/logo-dark.png`} height={200} width={200} alt="Qualle Tech Logo" />
       </Logo>
       <Container>
         <Main>
@@ -39,13 +39,16 @@ export default function HomepageLayout({ children }: { children: React.ReactNode
 }
 
 const BodyContainer = styled.div`
-  height: 100vh;
-  width: 100vw;
+  height: 100dvh;
+  width: 100dvw;
   background: ${theme.colors.backgroundLight};
   padding: 5vh 5vw;
   overflow: hidden;
   @media screen and (max-width: 769px) and (orientation: portrait) {
     padding: 4rem 2rem;
+  }
+  @media screen and (max-width: 769px) and (orientation: landscape) {
+    padding: 5dvh 10dvw;
   }
 `
 
@@ -104,6 +107,9 @@ const SubTitle = styled.p`
   @media screen and (max-width: 769px) and (orientation: portrait) {
     font-size: 1rem;
     bottom: 1.5rem;
+  }
+  @media screen and (max-width: 769px) and (orientation: landscape) {
+    font-size: 1.2rem;
   }
 `
 
