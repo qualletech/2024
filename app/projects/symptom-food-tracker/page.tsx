@@ -11,7 +11,7 @@ export default function Page() {
         collab: "Seed was created in collaboration with 4 other independent developers.",
         challenges: <Challenges />,
         flow: <Flow />,
-        coverImgSrc: "/2024/seed.png",
+        coverImgSrc: "seed.png",
         coverImgAlt: "Overview of Seed Project",
       }}
     />

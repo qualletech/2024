@@ -26,7 +26,7 @@ export default function ProjectDetailPage({ projectDetails }) {
         </ProjectInfo>
         <ImageInfo>
           <ImageContainer>
-            <Image src={coverImgSrc} alt={coverImgAlt} width={400} height={200} />
+            <Image src={`${process.env.BASEPATH}/${coverImgSrc}`} alt={coverImgAlt} width={400} height={200} />
           </ImageContainer>
           <p>Image shows mock data.</p>
         </ImageInfo>

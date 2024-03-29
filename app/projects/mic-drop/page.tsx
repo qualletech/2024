@@ -10,7 +10,7 @@ export default function Page() {
         deployInfo: "Currently in development",
         challenges: <Challenges />,
         flow: <Flow />,
-        coverImgSrc: "/2024/mic-drop.png",
+        coverImgSrc: "mic-drop.png",
         coverImgAlt: "Coming Soon Image",
       }}
     />

@@ -12,7 +12,7 @@ export default function HomepageLayout({ children }: { children: React.ReactNode
   return (
     <BodyContainer>
       <Logo>
-        <Image src="/2024/logo-dark.png" height={200} width={200} alt="Qualle Tech Logo" />
+        <Image src={`${process.env.BASEPATH}/logo-dark.png`} height={200} width={200} alt="Qualle Tech Logo" />
       </Logo>
       <Container>
         <Main>

@@ -5,7 +5,7 @@ export default function Separator() {
 }
 
 const SeparatorGraphic = styled.div`
-  background-image: url("/2024/separator.svg");
+  background-image: url(${process.env.BASEPATH}/separator.svg);
   background-repeat: no-repeat;
   height: 20px;
   border-radius: 2rem 10rem 0 5rem;

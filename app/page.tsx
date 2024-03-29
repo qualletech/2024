@@ -23,7 +23,7 @@ export default function Page() {
     <Columns>
       <Blob
         onClick={() => handleTileClick("/projects")}
-        $background="/2024/blob1.svg"
+        $background="blob1.svg"
         $margin="-30"
         $isAnimating={isAnimating}
         $expandedBlob={expandedBlob === "/projects"}
@@ -32,7 +32,7 @@ export default function Page() {
       </Blob>
       <Blob
         onClick={() => handleTileClick("/about")}
-        $background="/2024/blob2.svg"
+        $background="blob2.svg"
         $margin="60"
         $isAnimating={isAnimating}
         $expandedBlob={expandedBlob === "/about"}
@@ -41,7 +41,7 @@ export default function Page() {
       </Blob>
       <Blob
         onClick={() => handleTileClick("/contact")}
-        $background="/2024/blob3.svg"
+        $background="blob3.svg"
         $margin="-100"
         $isAnimating={isAnimating}
         $expandedBlob={expandedBlob === "/contact"}
@@ -113,7 +113,7 @@ const Blob = styled.div<{ $background: string; $margin: string; $isAnimating: bo
   display: grid;
   justify-content: center;
   align-items: center;
-  background: ${({ $background }) => `url(${$background})`} 0 0/105% 100% no-repeat;
+  background: ${({ $background }) => `url(${process.env.BASEPATH}/${$background})`} 0 0/105% 100% no-repeat;
   filter: drop-shadow(0 0.2rem 0.7rem #21219b40);
   z-index: ${({ $expandedBlob }) => ($expandedBlob ? "50" : "20")};
 
@@ -132,14 +132,14 @@ const Blob = styled.div<{ $background: string; $margin: string; $isAnimating: bo
   @media screen and (max-width: 1023px) and (orientation: portrait) {
     top: 0;
     left: ${({ $margin }) => `${$margin}px`};
-    background: ${({ $background }) => `url(${$background})`} 0 0/100% 102% no-repeat;
+    background: ${({ $background }) => `url(${process.env.BASEPATH}/${$background})`} 0 0/100% 102% no-repeat;
     animation-name: ${({ $isAnimating, $expandedBlob }) =>
       $isAnimating && $expandedBlob ? expandAnimationPortrait : "none"};
     animation-duration: 5s;
   }
   @media screen and (max-width: 769px) and (orientation: portrait) {
     left: ${({ $margin }) => `calc(${$margin}px / 2)`};
-    background: ${({ $background }) => `url(${$background})`} 0 0/100% 110% no-repeat;
+    background: ${({ $background }) => `url(${process.env.BASEPATH}/${$background})`} 0 0/100% 110% no-repeat;
   }
 `
 

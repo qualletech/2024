@@ -9,7 +9,7 @@ export interface ProjectInfo {
 export const PROJECTS: Array<ProjectInfo> = [
   {
     path: "/projects/mic-drop",
-    coverImg: "/2024/mic-drop.png",
+    coverImg: "mic-drop.png",
     alt: "Mic Drop Cover Image",
     title: "Mic Drop",
     desc: "Open Mic Event Dashboard for Comedians in NYC",
@@ -17,7 +17,7 @@ export const PROJECTS: Array<ProjectInfo> = [
   },
   {
     path: "/projects/admin-tool",
-    coverImg: "/2024/admin-staff.png",
+    coverImg: "admin-staff.png",
     alt: "Admin Tool and Staff Portal Cover Image",
     title: "Admin Dashboard & Staff Portal",
     desc: "Admin Dashboard and Staff Portal for Culinary Services",
@@ -25,7 +25,7 @@ export const PROJECTS: Array<ProjectInfo> = [
   },
   {
     path: "/projects/sourcing-tool",
-    coverImg: "/2024/sourcing-tool.png",
+    coverImg: "sourcing-tool.png",
     alt: "Sourcing Tool Cover Image",
     title: "Material Sourcing Tool",
     desc: "Monday Integration to source stones for a Bespoke Jewelry Designer",
@@ -33,7 +33,7 @@ export const PROJECTS: Array<ProjectInfo> = [
   },
   {
     path: "/projects/internal-database",
-    coverImg: "/2024/prideworks-backboard.png",
+    coverImg: "prideworks-backboard.png",
     alt: "Internal Database Tool Cover Image",
     title: "Internal Database",
     desc: "Internal Database Tool for Non-Profits",
@@ -41,7 +41,7 @@ export const PROJECTS: Array<ProjectInfo> = [
   },
   {
     path: "/projects/symptom-food-tracker",
-    coverImg: "/2024/seed.png",
+    coverImg: "seed.png",
     alt: "Symptom and Food Tracker Cover Image",
     title: "Food and Symptom Tracker",
     desc: "Demo Application for Food and Symptom Tracker",

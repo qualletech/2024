@@ -12,7 +12,7 @@ export default function Card({ projectInfo }: { projectInfo: ProjectInfo }) {
   return (
     <CardContainer onClick={() => router.push(path)}>
       <ImageContainer>
-        <Image src={coverImg} alt={alt} width={400} height={200} />
+        <Image src={`${process.env.BASEPATH}/${coverImg}`} alt={alt} width={400} height={200} />
       </ImageContainer>
       <Info>
         <CardTitle>{title}</CardTitle>
