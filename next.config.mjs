@@ -6,8 +6,8 @@ const nextConfig = {
    * @see https://nextjs.org/docs/app/building-your-application/deploying/static-exports
    */
   output: "export",
-  assetPrefix: `${process.env.ASSETPREFIX}`,
-  basePath: `${process.env.BASEPATH}`,
+  assetPrefix: process.env.ENVIRONMENT === "dev" ? "" : "/2024/",
+  basePath: process.env.ENVIRONMENT === "dev" ? "" : "/2024",
   compiler: {
     styledComponents: true,
   },
