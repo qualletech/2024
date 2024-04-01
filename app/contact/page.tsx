@@ -8,25 +8,32 @@ import { useState } from "react"
 import styled from "styled-components"
 
 export default function Page() {
-  const [formData, setFormData] = useState(null)
-  const [message, setMessage] = useState("Send")
+  const [formData, setFormData] = useState({ name: "", email: "", request: "" })
+  const [message, setMessage] = useState("")
   const [isLoading, setIsLoading] = useState(false)
+  const [formValid, setFormValid] = useState(false)
 
-  // TODO: add disabled state to button!
+  const validateEmail = (email) => {
+    const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
+    return regex.test(email)
+  }
+
+  const validateForm = () => {
+    const { name, email, request } = formData
+    const isNameValid = name !== ""
+    const isEmailValid = validateEmail(email)
+    const isRequestValid = request !== ""
+    setFormValid(isNameValid && isEmailValid && isRequestValid)
+  }
+
+  console.log(formValid)
+
   const sendEmail = async () => {
-    if (
-      !formData ||
-      !formData.name ||
-      !formData.name.length ||
-      !formData.request ||
-      !formData.request.length ||
-      !formData.email ||
-      !formData.email.length
-    ) {
-      // checking not working right
-      setMessage("Please fill out all form fields")
+    if (!formValid) {
+      setMessage("Please fill out all form fields with valid data")
       return
     }
+
     try {
       setIsLoading(true)
       await fetch("https://api.emailjs.com/api/v1.0/email/send", {
@@ -39,15 +46,25 @@ export default function Page() {
           template_params: formData,
         }),
       })
-      setFormData(null)
-      setIsLoading(false)
       setMessage("Request sent")
+      setFormData({ name: "", email: "", request: "" })
+      setIsLoading(false)
     } catch (e) {
-      setMessage("The email could not be sent please make sure you typed in your details correctly and try again")
+      setMessage("The email could not be sent. Please try again later.")
     }
     setTimeout(() => {
-      setMessage("Send")
+      setMessage("")
     }, 10000)
+  }
+
+  const handleChange = (e) => {
+    const { name, value } = e.target
+    setFormData((prevData) => ({
+      ...prevData,
+      [name]: value,
+    }))
+    validateForm()
+    setMessage("")
   }
 
   return (
@@ -58,9 +75,10 @@ export default function Page() {
           Name*
           <Input
             type="text"
+            name="name"
             placeholder="Your Name Here"
             value={formData?.name || ""}
-            onChange={(e) => setFormData({ ...formData, name: e.target.value })}
+            onChange={handleChange}
             required
           />
         </Label>
@@ -68,25 +86,30 @@ export default function Page() {
           Email*
           <Input
             type="email"
+            name="email"
             placeholder="Your Email Here"
             value={formData?.email || ""}
-            onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+            onChange={handleChange}
             required
           />
         </Label>
         <Label>
           Request*
           <TextArea
+            name="request"
             placeholder="Details about your Project or Questions Here"
             required
             rows={10}
             value={formData?.request || ""}
-            onChange={(e) => setFormData({ ...formData, request: e.target.value })}
+            onChange={handleChange}
           />
         </Label>
-        <Button type="button" onClick={sendEmail}>
-          {isLoading ? <Icon path={mdiLoading} spin size={0.8} /> : message}
-        </Button>
+        <ButtonContainer>
+          <Button type="button" onClick={sendEmail} $deactivated={!formValid}>
+            {isLoading ? <Icon path={mdiLoading} spin size={0.8} /> : "Send"}
+          </Button>
+          {message.length > 0 ? <p>{message}</p> : null}
+        </ButtonContainer>
       </Form>
     </PageContainer>
   )
@@ -124,13 +147,22 @@ const TextArea = styled.textarea`
   border-radius: 0.5rem;
 `
 
-const Button = styled.button`
+const Button = styled.button<{ $deactivated: boolean }>`
   padding: 1rem;
   font-size: 1.5rem;
   background: ${theme.colors.interactionDark};
-  cursor: pointer;
-  &:hover {
-    opacity: 0.8;
-  }
   border-radius: 0.5rem;
+  opacity: ${({ $deactivated }) => ($deactivated ? 0.5 : 1)};
+  cursor: ${({ $deactivated }) => ($deactivated ? "not-allowed" : "pointer")};
+  &:hover {
+    opacity: ${({ $deactivated }) => ($deactivated ? 0.5 : 0.8)};
+  }
+`
+
+const ButtonContainer = styled.div`
+  display: grid;
+  grid-gap: 0.5rem;
+  > p {
+    text-align: center;
+  }
 `
