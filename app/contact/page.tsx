@@ -26,8 +26,6 @@ export default function Page() {
     setFormValid(isNameValid && isEmailValid && isRequestValid)
   }
 
-  console.log(formValid)
-
   const sendEmail = async () => {
     if (!formValid) {
       setMessage("Please fill out all form fields with valid data")
@@ -99,7 +97,7 @@ export default function Page() {
             name="request"
             placeholder="Details about your Project or Questions Here"
             required
-            rows={10}
+            rows={8}
             value={formData?.request || ""}
             onChange={handleChange}
           />
