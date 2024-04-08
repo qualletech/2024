@@ -12,7 +12,7 @@ export default function HomepageLayout({ children }: { children: React.ReactNode
   return (
     <BodyContainer>
       <Logo>
-        <Image src={`/logo-dark.png`} height={200} width={200} alt="Qualle Tech Logo" />
+        <Image src="/logo-dark.png" height={200} width={200} alt="Qualle Tech Logo" />
       </Logo>
       <Container>
         <Main>
@@ -23,13 +23,17 @@ export default function HomepageLayout({ children }: { children: React.ReactNode
         </Main>
         <SubTitle>Qualle - /kwɑːl.i/ quall-e - jellyfish</SubTitle>
         <SideBar>
-          <IconContainer href="https://www.linkedin.com/in/vikwedel/" target="__blank" rel="noopener noreferrer">
+          <IconContainer
+            href="https://www.linkedin.com/company/qualle-tech/"
+            target="__blank"
+            rel="noopener noreferrer"
+          >
             <Icon path={mdiLinkedin} size="2rem" color={theme.colors.primaryLight} />
           </IconContainer>
-          <IconContainer href="https://www.instagram.com/qualle.tech" target="__blank" rel="noopener noreferrer">
+          <IconContainer href="https://www.instagram.com/qualle.tech" target="__blank" rel="noreferrer">
             <Icon path={mdiInstagram} size="2rem" color={theme.colors.primaryLight} />
           </IconContainer>
-          <IconContainer href="https://github.com/vik-wed" target="__blank" rel="noopener noreferrer">
+          <IconContainer href="https://github.com/qualle-tech" target="__blank" rel="noopener noreferrer">
             <Icon path={mdiGithub} size="2rem" color={theme.colors.primaryLight} />
           </IconContainer>
         </SideBar>
