@@ -56,7 +56,7 @@ export default function SubpageLayout({ children }: { children: React.ReactNode 
           <IconContainer href="https://www.instagram.com/qualle.tech" target="__blank" rel="noreferrer">
             Instagram
           </IconContainer>
-          <IconContainer href="https://github.com/vik-wed" target="__blank" rel="noopener noreferrer">
+          <IconContainer href="https://github.com/qualle-tech" target="__blank" rel="noopener noreferrer">
             Github
           </IconContainer>
         </Socials>
