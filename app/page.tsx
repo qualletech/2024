@@ -28,7 +28,7 @@ export default function Page() {
         $isAnimating={isAnimating}
         $expandedBlob={expandedBlob === "/projects"}
       >
-        <BlobText $isAnimating={isAnimating}>Developed by us</BlobText>
+        <BlobText $isAnimating={isAnimating}>Projects</BlobText>
       </Blob>
       <Blob
         onClick={() => handleTileClick("/about")}
@@ -37,7 +37,7 @@ export default function Page() {
         $isAnimating={isAnimating}
         $expandedBlob={expandedBlob === "/about"}
       >
-        <BlobText $isAnimating={isAnimating}>About us</BlobText>
+        <BlobText $isAnimating={isAnimating}>About</BlobText>
       </Blob>
       <Blob
         onClick={() => handleTileClick("/contact")}
@@ -46,7 +46,7 @@ export default function Page() {
         $isAnimating={isAnimating}
         $expandedBlob={expandedBlob === "/contact"}
       >
-        <BlobText $isAnimating={isAnimating}>Work with us</BlobText>
+        <BlobText $isAnimating={isAnimating}>Contact</BlobText>
       </Blob>
     </Columns>
   )

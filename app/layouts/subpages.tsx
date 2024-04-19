@@ -39,20 +39,24 @@ export default function SubpageLayout({ children }: { children: React.ReactNode 
           </Row>
         </NavRow>
         <Logo>
-          <Image src={`/logo-dark.png`} height={100} width={100} alt="Qualle Tech Logo" />
+          <Image src="/logo-dark.png" height={100} width={100} alt="Qualle Tech Logo" />
         </Logo>
         {children}
       </Main>
       <Footer>
         <FooterText>Qualle - /kwɑːl.i/ quall-e - jellyfish</FooterText>
         <Socials>
-          <IconContainer href="https://www.linkedin.com/in/vikwedel/" target="__blank" rel="noopener noreferrer">
+          <IconContainer
+            href="https://www.linkedin.com/company/qualle-tech/"
+            target="__blank"
+            rel="noopener noreferrer"
+          >
             LinkedIn
           </IconContainer>
-          <IconContainer href="https://www.instagram.com/qualle.tech" target="__blank" rel="noopener noreferrer">
+          <IconContainer href="https://www.instagram.com/qualle.tech" target="__blank" rel="noreferrer">
             Instagram
           </IconContainer>
-          <IconContainer href="https://github.com/vik-wed" target="__blank" rel="noopener noreferrer">
+          <IconContainer href="https://github.com/qualle-tech" target="__blank" rel="noopener noreferrer">
             Github
           </IconContainer>
         </Socials>
