@@ -5,6 +5,7 @@
 import StyleProvider from "../styles/StyleProvider"
 import HomepageLayout from "./layouts/homepage"
 import SubpageLayout from "./layouts/subpages"
+import { GoogleAnalytics } from "@next/third-parties/google"
 import { usePathname } from "next/navigation"
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
@@ -35,6 +36,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       <StyleProvider>
         <body>
           {isHomePage ? <HomepageLayout>{children}</HomepageLayout> : <SubpageLayout>{children}</SubpageLayout>}
+          <GoogleAnalytics gaId="G-2ZC907Y5TC" />
         </body>
       </StyleProvider>
     </html>
