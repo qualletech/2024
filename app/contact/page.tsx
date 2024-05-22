@@ -68,29 +68,33 @@ export default function Page() {
   return (
     <PageContainer>
       <h2>Contact Us</h2>
+      <p>Do you have an idea or a problem that needs solving?</p>
+      <p>Fill out the form and we'll reach out to set up a call for a free consultation!</p>
       <Form>
-        <Label>
-          Name*
-          <Input
-            type="text"
-            name="name"
-            placeholder="Your Name Here"
-            value={formData?.name || ""}
-            onChange={handleChange}
-            required
-          />
-        </Label>
-        <Label>
-          Email*
-          <Input
-            type="email"
-            name="email"
-            placeholder="Your Email Here"
-            value={formData?.email || ""}
-            onChange={handleChange}
-            required
-          />
-        </Label>
+        <NameAndEmailFields>
+          <Label>
+            Name*
+            <Input
+              type="text"
+              name="name"
+              placeholder="Your Name Here"
+              value={formData?.name || ""}
+              onChange={handleChange}
+              required
+            />
+          </Label>
+          <Label>
+            Email*
+            <Input
+              type="email"
+              name="email"
+              placeholder="Your Email Here"
+              value={formData?.email || ""}
+              onChange={handleChange}
+              required
+            />
+          </Label>
+        </NameAndEmailFields>
         <Label>
           Request*
           <TextArea
@@ -124,8 +128,17 @@ const Form = styled.div`
   }
 `
 
+const NameAndEmailFields = styled.div`
+  display: grid;
+  grid-auto-flow: column;
+  grid-gap: 1rem;
+  @media screen and (max-width: 675px) {
+    grid-auto-flow: row;
+  }
+`
+
 const Label = styled.label`
-  font-size: 1.5rem;
+  font-size: 1.2rem;
   display: grid;
   grid-gap: 0.5rem;
 `
@@ -147,7 +160,7 @@ const TextArea = styled.textarea`
 
 const Button = styled.button<{ $deactivated: boolean }>`
   padding: 1rem;
-  font-size: 1.5rem;
+  font-size: 1.2rem;
   background: ${theme.colors.interactionDark};
   border-radius: 0.5rem;
   opacity: ${({ $deactivated }) => ($deactivated ? 0.5 : 1)};
