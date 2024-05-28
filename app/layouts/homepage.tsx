@@ -30,10 +30,10 @@ export default function HomepageLayout({ children }: { children: React.ReactNode
           >
             <Icon path={mdiLinkedin} size="2rem" color={theme.colors.primaryLight} />
           </IconContainer>
-          <IconContainer href="https://www.instagram.com/qualle.tech" target="__blank" rel="noreferrer">
+          <IconContainer href="https://www.instagram.com/qualletech" target="__blank" rel="noreferrer">
             <Icon path={mdiInstagram} size="2rem" color={theme.colors.primaryLight} />
           </IconContainer>
-          <IconContainer href="https://github.com/qualle-tech" target="__blank" rel="noopener noreferrer">
+          <IconContainer href="https://github.com/qualletech" target="__blank" rel="noopener noreferrer">
             <Icon path={mdiGithub} size="2rem" color={theme.colors.primaryLight} />
           </IconContainer>
         </SideBar>
