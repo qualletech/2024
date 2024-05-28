@@ -13,7 +13,15 @@ export const PROJECTS: Array<ProjectInfo> = [
     alt: "Mic Drop Cover Image",
     title: "Mic Drop",
     desc: "Open Mic Event Dashboard for Comedians in NYC",
-    timeline: "In Development",
+    timeline: "In Development - MVP to be deployed June 2024",
+  },
+  {
+    path: "/projects/mock-mobile-site",
+    coverImg: "/karamozov.png",
+    alt: "Mock College Website for Short Film",
+    title: "Mock Mobile Website",
+    desc: "Mock Mobile College Website for Short Film",
+    timeline: "Deployed May 2024",
   },
   {
     path: "/projects/admin-tool",
@@ -21,7 +29,7 @@ export const PROJECTS: Array<ProjectInfo> = [
     alt: "Admin Tool and Staff Portal Cover Image",
     title: "Admin Dashboard & Staff Portal",
     desc: "Admin Dashboard and Staff Portal for Culinary Services",
-    timeline: "In Development - to be deployed in April 2024",
+    timeline: "Deployed April 2024",
   },
   {
     path: "/projects/sourcing-tool",
