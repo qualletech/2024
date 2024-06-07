@@ -1,30 +1,15 @@
-"use client"
-
 import Card from "../_components/Card"
+import Columns from "../_components/Columns"
 import PageContainer from "../_components/PageContainer"
-import { PROJECTS } from "./CONSTANTS"
-import styled from "styled-components"
+import getProjects from "../_utils/getProjects"
 
-export default function Page() {
+export default async function Page() {
+  const projects = await getProjects()
+
   return (
     <PageContainer>
       <h2>Developed by Qualle Tech</h2>
-      <Columns>{PROJECTS?.map((project) => <Card projectInfo={project} />)}</Columns>
+      <Columns>{projects?.map((project) => <Card projectInfo={project} key={project.slug} />)}</Columns>
     </PageContainer>
   )
 }
-
-const Columns = styled.div`
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
-  align-content: start;
-  grid-gap: 1rem;
-  overflow: auto;
-  padding-right: 2rem;
-  @media screen and (max-width: 1023px) and (orientation: portrait) {
-    grid-template-columns: unset;
-  }
-  @media screen and (max-width: 769px) and (orientation: landscape) {
-    grid-template-columns: 1fr 1fr;
-  }
-`

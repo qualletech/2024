@@ -25,29 +25,44 @@ export default function Page() {
         onClick={() => handleTileClick("/projects")}
         $background="blob1.svg"
         $margin="-30"
+        $left="0"
         $isAnimating={isAnimating}
         $expandedBlob={expandedBlob === "/projects"}
       >
         <BlobText $isAnimating={isAnimating}>Projects</BlobText>
       </Blob>
       <Blob
-        onClick={() => handleTileClick("/about")}
+        onClick={() => handleTileClick("/blog")}
         $background="blob2.svg"
         $margin="60"
+        $left="0"
         $isAnimating={isAnimating}
-        $expandedBlob={expandedBlob === "/about"}
+        $expandedBlob={expandedBlob === "/blog"}
       >
-        <BlobText $isAnimating={isAnimating}>About</BlobText>
+        <BlobText $isAnimating={isAnimating}>Blog</BlobText>
       </Blob>
-      <Blob
-        onClick={() => handleTileClick("/contact")}
-        $background="blob3.svg"
-        $margin="-100"
-        $isAnimating={isAnimating}
-        $expandedBlob={expandedBlob === "/contact"}
-      >
-        <BlobText $isAnimating={isAnimating}>Contact</BlobText>
-      </Blob>
+      <LastColumn>
+        <Blob
+          onClick={() => handleTileClick("/about")}
+          $background="blob3.svg"
+          $margin="-20"
+          $left="-40"
+          $isAnimating={isAnimating}
+          $expandedBlob={expandedBlob === "/about"}
+        >
+          <BlobText $isAnimating={isAnimating}>About</BlobText>
+        </Blob>
+        <Blob
+          onClick={() => handleTileClick("/contact")}
+          $background="blob4.svg"
+          $margin="-150"
+          $left="20"
+          $isAnimating={isAnimating}
+          $expandedBlob={expandedBlob === "/contact"}
+        >
+          <BlobText $isAnimating={isAnimating}>Contact</BlobText>
+        </Blob>
+      </LastColumn>
     </Columns>
   )
 }
@@ -60,6 +75,11 @@ const Columns = styled.div`
   @media screen and (max-width: 1023px) and (orientation: portrait) {
     grid-auto-flow: row;
   }
+`
+
+const LastColumn = styled.div`
+  display: grid;
+  padding: 0;
 `
 
 const floatAnimation = keyframes`
@@ -98,7 +118,7 @@ const expandAnimationPortrait = keyframes`
     opacity: 1;
   }
   25% {
-    transform: translateX(0px) scale(100);
+    transform: translateX(0px) scale(800);
     opacity: 1;
   }
   100% {
@@ -107,13 +127,20 @@ const expandAnimationPortrait = keyframes`
   }
 `
 
-const Blob = styled.div<{ $background: string; $margin: string; $isAnimating: boolean; $expandedBlob: boolean }>`
+const Blob = styled.div<{
+  $background: string
+  $margin: string
+  $left: string
+  $isAnimating: boolean
+  $expandedBlob: boolean
+}>`
   top: ${({ $margin }) => `${$margin}px`};
+  left: ${({ $left }) => `${$left}px`};
   cursor: pointer;
   display: grid;
   justify-content: center;
   align-items: center;
-  background: ${({ $background }) => `url(${$background})`} 0 0/105% 100% no-repeat;
+  background: ${({ $background }) => `url(${$background})`} 0 0/100% 100% no-repeat;
   filter: drop-shadow(0 0.2rem 0.7rem #21219b40);
   z-index: ${({ $expandedBlob }) => ($expandedBlob ? "50" : "20")};
 
@@ -128,7 +155,9 @@ const Blob = styled.div<{ $background: string; $margin: string; $isAnimating: bo
     animation-duration: ${({ $isAnimating }) => ($isAnimating ? "none" : "5s")};
     animation-iteration-count: ${({ $isAnimating }) => ($isAnimating ? "none" : "infinite")};
   }
-
+  > h3 {
+    left: ${({ $left }) => `calc(${$left}px / 2)`};
+  }
   @media screen and (max-width: 1023px) and (orientation: portrait) {
     top: 0;
     left: ${({ $margin }) => `${$margin}px`};

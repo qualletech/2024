@@ -4,19 +4,26 @@ import Image from "next/image"
 import { useRouter } from "next/navigation"
 import styled from "styled-components"
 
-export default function Card({ projectInfo }) {
-  const { slug, coverImg, title, desc, timeline } = projectInfo
+export default function BlogTile({ blog }) {
+  const { slug, coverImg, title, excerpt, date } = blog
+  const publishedDate = new Date(date).toLocaleString("en-US", {
+    weekday: "short",
+    year: "numeric",
+    month: "short",
+    day: "numeric",
+    hour12: true,
+  })
   const router = useRouter()
 
   return (
-    <CardContainer onClick={() => router.push(`/projects/${slug}`)}>
+    <CardContainer onClick={() => router.push(`/blog/${slug}`)}>
       <ImageContainer>
-        <Image src={coverImg.fields.file.url} alt={coverImg.fields.file.title} width={400} height={200} />
+        <Image src={coverImg.fields.file.url} alt={coverImg.fields.file.title} width={50} height={200} />
       </ImageContainer>
       <Info>
         <CardTitle>{title}</CardTitle>
-        <p>{desc}</p>
-        <i>{timeline}</i>
+        <p>{excerpt}</p>
+        <i>{publishedDate}</i>
       </Info>
     </CardContainer>
   )
@@ -52,7 +59,7 @@ const ImageContainer = styled.div`
   > img {
     border-radius: 1rem 1rem 0 0;
     width: 100%;
-    height: auto;
+    object-fit: cover;
 
     @media screen and (max-width: 1023px) {
       border-radius: 1rem 0 0 1rem;
