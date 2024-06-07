@@ -1,15 +1,18 @@
-import { getBlogPosts } from "../_utils/contentful"
+import BlogTile from "../_components/BlogTile"
+import Columns from "../_components/Columns"
+import PageContainer from "../_components/PageContainer"
+import getBlogPosts from "../_utils/getBlogPost"
 
 export default async function BlogLanding() {
   const blogs = await getBlogPosts()
   return (
-    <div>
-      <h1>Latest Blog Posts</h1>
-      {blogs.map((blog) => (
-        <div key={blog.slug as string}>
-          <a href={`/blog/${blog.slug}`}> {blog.title}</a>
-        </div>
-      ))}
-    </div>
+    <PageContainer>
+      <h2>Blog Posts</h2>
+      <Columns>
+        {blogs.map((blog) => (
+          <BlogTile key={blog.title} blog={blog} />
+        ))}
+      </Columns>
+    </PageContainer>
   )
 }
