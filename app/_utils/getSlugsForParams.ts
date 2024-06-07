@@ -1,10 +1,12 @@
 import contentfulClient from "./contentfulClient"
 
-export default async function getEntryBySlug(slug: string, type: string) {
+export default async function getSlugsForParams(type: string) {
   const queryOptions = {
     content_type: type,
-    "fields.slug[match]": slug,
+    select: "fields.slug",
   }
   const queryResult = await contentfulClient.getEntries(queryOptions)
-  return queryResult.items[0]
+  return queryResult.items.map((entry) => ({
+    slug: entry.fields.slug,
+  }))
 }
