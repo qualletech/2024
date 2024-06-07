@@ -125,6 +125,7 @@ const NavRow = styled.div`
   @media screen and (max-width: 1023px) and (orientation: portrait) {
     grid-auto-flow: row;
     align-items: start;
+    padding-right: 0;
   }
 `
 
