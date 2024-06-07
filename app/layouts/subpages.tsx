@@ -11,7 +11,8 @@ export default function SubpageLayout({ children }: { children: React.ReactNode 
   const router = useRouter()
   const pathname = usePathname()
   const color = BACKGROUNDCOLOR?.find((o) => o.path === pathname)?.color || ""
-  const isAnimatedPath = pathname === "/projects" || pathname === "/about" || pathname === "/contact"
+  const isAnimatedPath =
+    pathname === "/projects" || pathname === "/blog" || pathname === "/about" || pathname === "/contact"
   const [isAnimating, setIsAnimating] = useState(isAnimatedPath)
 
   setTimeout(() => {
@@ -29,6 +30,9 @@ export default function SubpageLayout({ children }: { children: React.ReactNode 
           <Row>
             <IconContainer onClick={() => router.push("/projects")} $active={pathname === "/projects"}>
               Projects
+            </IconContainer>
+            <IconContainer onClick={() => router.push("/blog")} $active={pathname === "/blog"}>
+              Blog
             </IconContainer>
             <IconContainer onClick={() => router.push("/about")} $active={pathname === "/about"}>
               About
