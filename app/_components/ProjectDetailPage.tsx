@@ -6,11 +6,11 @@ import Image from "next/image"
 import styled from "styled-components"
 
 export default function ProjectDetailPage({ projectDetails }) {
-  const { title, deployInfo, challenges, flow, coverImgSrc, coverImgAlt } = projectDetails
+  const { title, timeline, challenges, flow, coverImg } = projectDetails
   return (
     <Container>
       <h2>{title}</h2>
-      <DeployInfo>{deployInfo}</DeployInfo>
+      <DeployInfo>{timeline}</DeployInfo>
       {projectDetails?.collab ? <p>{projectDetails?.collab}</p> : null}
       <Separator />
       <Columns>
@@ -26,7 +26,7 @@ export default function ProjectDetailPage({ projectDetails }) {
         </ProjectInfo>
         <ImageInfo>
           <ImageContainer>
-            <Image src={coverImgSrc} alt={coverImgAlt} width={400} height={200} />
+            <Image src={coverImg?.fields.file.url} alt={coverImg?.fields.file.title} width={400} height={200} />
           </ImageContainer>
           <p>Image shows mock data.</p>
         </ImageInfo>
