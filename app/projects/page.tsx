@@ -1,13 +1,15 @@
 import Card from "../_components/Card"
 import Columns from "../_components/Columns"
 import PageContainer from "../_components/PageContainer"
-import { PROJECTS } from "./CONSTANTS"
+import getProjects from "../_utils/getProjects"
 
-export default function Page() {
+export default async function Page() {
+  const projects = await getProjects()
+
   return (
     <PageContainer>
       <h2>Developed by Qualle Tech</h2>
-      <Columns>{PROJECTS?.map((project) => <Card projectInfo={project} />)}</Columns>
+      <Columns>{projects?.map((project) => <Card projectInfo={project} key={project.slug} />)}</Columns>
     </PageContainer>
   )
 }

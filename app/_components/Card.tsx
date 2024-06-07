@@ -1,18 +1,17 @@
 "use client"
 
-import { ProjectInfo } from "../projects/CONSTANTS"
 import Image from "next/image"
 import { useRouter } from "next/navigation"
 import styled from "styled-components"
 
-export default function Card({ projectInfo }: { projectInfo: ProjectInfo }) {
-  const { path, alt, coverImg, title, desc, timeline } = projectInfo
+export default function Card({ projectInfo }) {
+  const { slug, coverImg, title, desc, timeline } = projectInfo
   const router = useRouter()
 
   return (
-    <CardContainer onClick={() => router.push(path)}>
+    <CardContainer onClick={() => router.push(`/projects/${slug}`)}>
       <ImageContainer>
-        <Image src={coverImg} alt={alt} width={400} height={200} />
+        <Image src={coverImg.fields.file.url} alt={coverImg.fields.file.title} width={400} height={200} />
       </ImageContainer>
       <Info>
         <CardTitle>{title}</CardTitle>

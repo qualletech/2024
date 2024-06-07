@@ -7,6 +7,7 @@ import styled from "styled-components"
 
 export default function ProjectDetailPage({ projectDetails }) {
   const { title, timeline, challenges, flow, coverImg } = projectDetails
+  console.log(flow)
   return (
     <Container>
       <h2>{title}</h2>
