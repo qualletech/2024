@@ -1,7 +1,7 @@
 import BlogTile from "../_components/BlogTile"
 import Columns from "../_components/Columns"
 import PageContainer from "../_components/PageContainer"
-import getBlogPosts from "../_utils/getBlogPost"
+import getBlogPosts from "../_utils/getBlogPosts"
 
 export default async function BlogLanding() {
   const blogs = await getBlogPosts()
