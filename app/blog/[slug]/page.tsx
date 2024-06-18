@@ -5,7 +5,7 @@ import { documentToReactComponents } from "@contentful/rich-text-react-renderer"
 
 export async function generateStaticParams() {
   const slugs = await getSlugsForParams("blog")
-  return slugs || []
+  return slugs
 }
 
 const renderOptions = {
