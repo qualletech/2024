@@ -4,7 +4,7 @@ name: Build on Contentful Publish
 on:
   # Runs on publish event
   repository_dispatch:
-    	types: [publish-event]
+    types: [publish-event]
 
 jobs:
   # Build job
