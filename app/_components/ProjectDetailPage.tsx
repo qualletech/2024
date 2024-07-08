@@ -28,7 +28,13 @@ export default function ProjectDetailPage({ projectDetails }) {
         </ProjectInfo>
         <ImageInfo>
           <ImageContainer>
-            <Image src={coverImg?.fields.file.url} alt={coverImg?.fields.file.title} width={400} height={200} />
+            <Image
+              src={coverImg?.fields.file.url}
+              alt={coverImg?.fields.file.title}
+              width={400}
+              height={200}
+              loading="lazy"
+            />
           </ImageContainer>
           <p>Image shows mock data.</p>
         </ImageInfo>

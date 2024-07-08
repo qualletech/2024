@@ -43,7 +43,7 @@ export default function SubpageLayout({ children }: { children: React.ReactNode 
           </Row>
         </NavRow>
         <Logo>
-          <Image src="/logo-dark.png" height={100} width={100} alt="Qualle Tech Logo" />
+          <Image src="/logo-dark.webp" height={100} width={100} alt="Qualle Tech Logo" />
         </Logo>
         {children}
       </Main>

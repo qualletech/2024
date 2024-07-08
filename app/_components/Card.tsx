@@ -11,7 +11,13 @@ export default function Card({ projectInfo }) {
   return (
     <CardContainer onClick={() => router.push(`/projects/${slug}`)}>
       <ImageContainer>
-        <Image src={coverImg.fields.file.url} alt={coverImg.fields.file.title} width={400} height={200} />
+        <Image
+          src={coverImg.fields.file.url}
+          alt={coverImg.fields.file.title}
+          width={400}
+          height={200}
+          loading="lazy"
+        />
       </ImageContainer>
       <Info>
         <CardTitle>{title}</CardTitle>

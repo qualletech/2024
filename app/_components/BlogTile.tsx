@@ -18,7 +18,7 @@ export default function BlogTile({ blog }) {
   return (
     <CardContainer onClick={() => router.push(`/blog/${slug}`)}>
       <ImageContainer>
-        <Image src={coverImg.fields.file.url} alt={coverImg.fields.file.title} width={50} height={200} />
+        <Image src={coverImg.fields.file.url} alt={coverImg.fields.file.title} width={50} height={200} loading="lazy" />
       </ImageContainer>
       <Info>
         <CardTitle>{title}</CardTitle>
