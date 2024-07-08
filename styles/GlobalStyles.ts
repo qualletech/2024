@@ -48,6 +48,16 @@ const GlobalStyles = createGlobalStyle`
     }
   }
 
+    ul {
+    list-style-type: disc; /* You can change this to whatever style you prefer */
+    margin: 1rem 0; /* Adds margin to the top and bottom of the list */
+    padding-left: 1.5rem; /* Adds padding to the left of the list items */
+  }
+
+  li {
+    margin-bottom: 0.5rem; /* Adds margin to the bottom of each list item */
+  }
+
   ::-webkit-scrollbar {
     box-sizing: content-box;
     width: 1rem;

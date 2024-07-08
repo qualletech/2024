@@ -19,8 +19,8 @@ const renderOptions = {
           src={url}
           alt={title}
           style={{
-            maxHeight: "30dvh",
-            maxWidth: "90%",
+            maxHeight: "50dvh",
+            maxWidth: "100%",
             aspectRatio: "auto",
             objectFit: "contain",
             borderRadius: "1rem",
@@ -41,8 +41,10 @@ export default async function BlogPage(props) {
 
   return (
     <PageContainer>
-      <h3>{title}</h3>
-      {documentToReactComponents(content, renderOptions)}
+      <div style={{ display: "grid", paddingRight: "2rem", gridGap: "1rem" }}>
+        <h3>{title}</h3>
+        {documentToReactComponents(content, renderOptions)}
+      </div>
     </PageContainer>
   )
 }

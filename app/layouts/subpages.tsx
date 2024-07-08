@@ -195,7 +195,7 @@ const Footer = styled.div`
 
 const FooterText = styled.p`
   @media screen and (max-width: 1023px) and (orientation: portrait) {
-    font-size: 1.2rem;
+    font-size: 1.1rem;
   }
 `
 const IconContainer = styled.a<{ $active?: boolean }>`
@@ -205,7 +205,7 @@ const IconContainer = styled.a<{ $active?: boolean }>`
     opacity: 80%;
   }
   @media screen and (max-width: 1023px) and (orientation: portrait) {
-    font-size: 1.2rem;
+    font-size: 1rem;
   }
 `
 
