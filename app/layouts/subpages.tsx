@@ -27,15 +27,11 @@ export default function SubpageLayout({ children }: { children: React.ReactNode 
             <h1>Qualle Tech</h1>
           </IconContainer>
           <Row>
-            <IconContainer onClick={() => router.push("/projects")} $active={pathname === "/projects"}>
-              Projects
-            </IconContainer>
-            <IconContainer onClick={() => router.push("/about")} $active={pathname === "/about"}>
-              About
-            </IconContainer>
-            <IconContainer onClick={() => router.push("/contact")} $active={pathname === "/contact"}>
-              Contact
-            </IconContainer>
+            {SUBPAGES?.map((subpage) => (
+              <IconContainer onClick={() => router.push(subpage?.path)} $active={pathname === subpage?.path}>
+                {subpage?.title}
+              </IconContainer>
+            ))}
           </Row>
         </NavRow>
         <Logo>

@@ -8,7 +8,7 @@ export default async function Page() {
 
   return (
     <PageContainer>
-      <h2>Developed by Qualle Tech</h2>
+      <h2>Portfolio</h2>
       <Columns>{projects?.map((project) => <Card projectInfo={project} key={project.slug} />)}</Columns>
     </PageContainer>
   )
