@@ -4,6 +4,7 @@ const GlobalStyles = createGlobalStyle`
   * {
     font-family: 'Open Sans', sans-serif;
     font-size: 16px;
+    font-weight: 400;
     box-sizing: border-box;
     -moz-box-sizing: border-box;
     -webkit-box-sizing: border-box;
@@ -13,7 +14,7 @@ const GlobalStyles = createGlobalStyle`
     padding: 0;
     -webkit-font-smoothing: antialiased;
     position: relative;
-    color: ${({ theme }) => theme.colors.primaryDark};
+    color: ${({ theme }) => theme.colors.primaryLight};
    -webkit-tap-highlight-color: transparent;
   }
 
