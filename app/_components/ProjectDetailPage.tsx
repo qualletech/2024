@@ -18,11 +18,11 @@ export default function ProjectDetailPage({ projectDetails }) {
       <Columns>
         <ProjectInfo>
           <TextParagraph>
-            <h3>Challenges</h3>
+            <SectionTitle>Challenges</SectionTitle>
             <p>{challenges}</p>
           </TextParagraph>
           <TextParagraph>
-            <h3>Unlocking the Flow</h3>
+            <SectionTitle>Unlocking the Flow</SectionTitle>
             {documentToReactComponents(flow)}
           </TextParagraph>
         </ProjectInfo>
@@ -52,8 +52,8 @@ const Container = styled.div`
 
 const DeployInfo = styled.p`
   font-style: italic;
-  font-size: 1.3rem;
-  color: ${({ theme }) => theme.colors.interactionDark};
+  font-size: 1.2rem;
+  color: ${({ theme }) => theme.colors.secondaryDark};
 `
 const ImageContainer = styled.div`
   font-size: 0;
@@ -87,4 +87,8 @@ const ImageInfo = styled.div`
   display: grid;
   grid-gap: 0.5rem;
   align-content: center;
+`
+
+const SectionTitle = styled.h3`
+  color: ${({ theme }) => theme.colors.interactionDark};
 `
