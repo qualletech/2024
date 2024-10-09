@@ -182,12 +182,16 @@ const Footer = styled.div`
 `
 
 const FooterText = styled.p`
+  font-family: "Josefin Sans", sans-serif;
+  font-size: 1.2rem;
   color: ${theme.colors.primaryLight};
   @media screen and (max-width: 1023px) and (orientation: portrait) {
     font-size: 1.1rem;
   }
 `
 const IconContainer = styled.a<{ $active?: boolean }>`
+  font-family: "Josefin Sans", sans-serif;
+  font-size: 1.2rem;
   text-decoration: ${({ $active }) => ($active ? "underline" : "none")};
   color: ${theme.colors.neutralDark};
   cursor: pointer;
