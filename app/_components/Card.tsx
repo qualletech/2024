@@ -5,7 +5,7 @@ import { useRouter } from "next/navigation"
 import styled from "styled-components"
 
 export default function Card({ projectInfo }) {
-  const { slug, coverImg, title, desc, timeline } = projectInfo
+  const { slug, coverImg, title, description, timeline } = projectInfo
   const router = useRouter()
 
   return (
@@ -21,8 +21,8 @@ export default function Card({ projectInfo }) {
       </ImageContainer>
       <Info>
         <CardTitle>{title}</CardTitle>
-        <p>{desc}</p>
-        <i>{timeline}</i>
+        <Description>{description}</Description>
+        <Description>{timeline}</Description>
       </Info>
     </CardContainer>
   )
@@ -93,4 +93,9 @@ const Info = styled.div`
       text-overflow: ellipsis;
     }
   }
+`
+
+const Description = styled.p`
+  font-size: 0.8rem;
+  color: ${({ theme }) => theme.colors.secondaryDark};
 `
