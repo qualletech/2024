@@ -20,6 +20,8 @@ const GlobalStyles = createGlobalStyle`
 
   h1 {
     font-family: 'Comfortaa', sans-serif;
+    color: ${({ theme }) => theme.colors.primaryDark};
+    font-weight: 600;
     text-transform: uppercase;
     line-height: 1.5;
     margin: 0;
@@ -44,6 +46,7 @@ const GlobalStyles = createGlobalStyle`
 
   h3 {
   font-family: 'Josefin Sans', sans-serif;
+  color: ${({ theme }) => theme.colors.primaryDark};
     font-size: 2rem;
     margin: 0;
     line-height: 1.5;
