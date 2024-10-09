@@ -67,6 +67,7 @@ const ImageContainer = styled.div`
 `
 
 const CardTitle = styled.h5`
+  font-family: "Josefin Sans", sans-serif;
   font-size: 1.2rem;
   color: ${({ theme }) => theme.colors.interactionDark};
   @media screen and (max-width: 1023px) and (orientation: portrait) {
