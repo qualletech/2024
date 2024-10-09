@@ -1,5 +1,6 @@
 "use client"
 
+import SUBPAGES from "./_utils/CONSTANTS"
 import { useRouter } from "next/navigation"
 import { useState } from "react"
 import styled, { keyframes } from "styled-components"
@@ -21,34 +22,17 @@ export default function Page() {
   }
   return (
     <Columns>
-      <Blob
-        onClick={() => handleTileClick("/projects")}
-        $background="blob1.svg"
-        $margin="-30"
-        $isAnimating={isAnimating}
-        $expandedBlob={expandedBlob === "/projects"}
-      >
-        <BlobText $isAnimating={isAnimating}>Projects</BlobText>
-      </Blob>
-      <Blob
-        onClick={() => handleTileClick("/about")}
-        $background="blob2.svg"
-        $margin="60"
-        $isAnimating={isAnimating}
-        $expandedBlob={expandedBlob === "/about"}
-      >
-        <BlobText $isAnimating={isAnimating}>About</BlobText>
-      </Blob>
-
-      <Blob
-        onClick={() => handleTileClick("/contact")}
-        $background="blob4.svg"
-        $margin="-100"
-        $isAnimating={isAnimating}
-        $expandedBlob={expandedBlob === "/contact"}
-      >
-        <BlobText $isAnimating={isAnimating}>Contact</BlobText>
-      </Blob>
+      {SUBPAGES.map((subpage) => (
+        <Blob
+          onClick={() => handleTileClick(subpage?.path)}
+          $background={subpage?.blob}
+          $margin={subpage?.marginShift}
+          $isAnimating={isAnimating}
+          $expandedBlob={expandedBlob === `${subpage?.path}`}
+        >
+          <BlobText $isAnimating={isAnimating}>{subpage?.title}</BlobText>
+        </Blob>
+      ))}
     </Columns>
   )
 }

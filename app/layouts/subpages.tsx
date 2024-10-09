@@ -1,7 +1,7 @@
 "use client"
 
 import theme from "../../styles/theme"
-import { BACKGROUNDCOLOR } from "../projects/CONSTANTS"
+import SUBPAGES from "../_utils/CONSTANTS"
 import Image from "next/image"
 import { usePathname, useRouter } from "next/navigation"
 import { useState } from "react"
@@ -10,7 +10,7 @@ import styled, { keyframes } from "styled-components"
 export default function SubpageLayout({ children }: { children: React.ReactNode }) {
   const router = useRouter()
   const pathname = usePathname()
-  const color = BACKGROUNDCOLOR?.find((o) => o.path === pathname)?.color || ""
+  const color = SUBPAGES?.find((subpage) => subpage?.path === pathname)?.color || ""
   const isAnimatedPath = pathname === "/projects" || pathname === "/about" || pathname === "/contact"
   const [isAnimating, setIsAnimating] = useState(isAnimatedPath)
 
