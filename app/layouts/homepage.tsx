@@ -24,13 +24,13 @@ export default function HomepageLayout({ children }: { children: React.ReactNode
         <SubTitle>Qualle - /kwɑːl.i/ quall-e - jellyfish</SubTitle>
         <SideBar>
           <IconContainer href="https://www.linkedin.com/in/vikwedel/" target="__blank" rel="noopener noreferrer">
-            <Icon path={mdiLinkedin} size="2rem" color={theme.colors.primaryLight} />
+            <Icon path={mdiLinkedin} size="2.5rem" color={theme.colors.primaryLight} />
           </IconContainer>
           <IconContainer href="https://www.instagram.com/qualletech" target="__blank" rel="noreferrer">
-            <Icon path={mdiInstagram} size="2rem" color={theme.colors.primaryLight} />
+            <Icon path={mdiInstagram} size="2.5rem" color={theme.colors.primaryLight} />
           </IconContainer>
           <IconContainer href="https://github.com/vik-wed" target="__blank" rel="noopener noreferrer">
-            <Icon path={mdiGithub} size="2rem" color={theme.colors.primaryLight} />
+            <Icon path={mdiGithub} size="2.5rem" color={theme.colors.primaryLight} />
           </IconContainer>
         </SideBar>
       </Container>
@@ -91,6 +91,7 @@ const Container = styled.div`
 `
 
 const SubTitle = styled.p`
+  font-family: "Josefin Sans", sans-serif;
   user-select: none;
   color: ${theme.colors.primaryLight};
   font-size: 1.7rem;
