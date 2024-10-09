@@ -91,6 +91,7 @@ const Container = styled.div`
 `
 
 const SubTitle = styled.p`
+  user-select: none;
   color: ${theme.colors.primaryLight};
   font-size: 1.7rem;
   width: 90vh;
