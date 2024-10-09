@@ -2,8 +2,8 @@ import { createGlobalStyle } from "styled-components"
 
 const GlobalStyles = createGlobalStyle`
   * {
-    font-family: 'Josefin Sans', sans-serif;
-    font-size: 18px;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 16px;
     box-sizing: border-box;
     -moz-box-sizing: border-box;
     -webkit-box-sizing: border-box;
@@ -20,6 +20,7 @@ const GlobalStyles = createGlobalStyle`
   h1 {
     font-family: 'Comfortaa', sans-serif;
     text-transform: uppercase;
+    line-height: 1.5;
     margin: 0;
     font-size: 3rem;
     @media screen and (max-width: 769px) and (orientation: portrait) {
@@ -29,10 +30,11 @@ const GlobalStyles = createGlobalStyle`
   }
 
   h2 {
-
+  font-family: 'Josefin Sans', sans-serif;
     margin: 0;
     font-size: 2.5rem;
-    color: ${({ theme }) => theme.colors.secondaryDark};
+    line-height: 1.5;
+    color: ${({ theme }) => theme.colors.secondaryLight};
     font-weight: 400;
     @media screen and (max-width: 769px) and (orientation: portrait) {
       font-size: 2rem;
@@ -40,8 +42,10 @@ const GlobalStyles = createGlobalStyle`
   }
 
   h3 {
+  font-family: 'Josefin Sans', sans-serif;
     font-size: 2rem;
     margin: 0;
+    line-height: 1.5;
     font-weight: 400;
     @media screen and (max-width: 769px) and (orientation: portrait) {
       font-size: 1.8rem;
