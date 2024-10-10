@@ -21,32 +21,23 @@ export default function Card({ projectInfo }) {
       </ImageContainer>
       <Info>
         <CardTitle>{title}</CardTitle>
-        <Description>{description}</Description>
-        <Description>{timeline}</Description>
+        <p>{description}</p>
+        <i>{timeline}</i>
       </Info>
     </CardContainer>
   )
 }
 
 const CardContainer = styled.div`
+  grid-template-rows: auto 1fr;
   cursor: pointer;
   display: grid;
-  border: 1px solid ${({ theme }) => theme.colors.neutralDark};
-  background: ${({ theme }) => theme.colors.neutralDark};
+  border: 1px solid ${({ theme }) => theme.colors.neutralLight}70;
+  background: ${({ theme }) => theme.colors.neutralLight}70;
   border-radius: 1rem;
-  align-items: start;
-  grid-gap: 0.5rem;
+  align-content: start;
   &:hover {
     opacity: 80%;
-  }
-  @media screen and (max-width: 1023px) {
-    grid-template-columns: 1fr 2fr;
-    align-items: center;
-    grid-gap: 1rem;
-  }
-  @media screen and (max-width: 769px) {
-    grid-template-columns: 1fr;
-    padding: 1rem;
   }
 `
 const ImageContainer = styled.div`
@@ -59,10 +50,6 @@ const ImageContainer = styled.div`
     border-radius: 1rem 1rem 0 0;
     width: 100%;
     height: auto;
-
-    @media screen and (max-width: 1023px) {
-      border-radius: 1rem 0 0 1rem;
-    }
   }
 `
 
@@ -76,26 +63,16 @@ const CardTitle = styled.h5`
 `
 
 const Info = styled.div`
-  padding: 0 0.5rem 0.5rem 0.5rem;
-  grid-gap: 0.5rem;
   display: grid;
-  @media screen and (max-width: 1023px) {
-    padding: 0 0.5rem;
-  }
+  grid-template-rows: 1fr 1fr auto;
+  padding: 0.5rem;
+  grid-gap: 0.2rem;
   > p,
   i {
+    font-size: 0.9rem;
+    color: ${({ theme }) => theme.colors.primaryLight};
     @media screen and (max-width: 1023px) {
-      font-size: 1.2rem;
-    }
-    @media screen and (max-width: 769px) {
-      white-space: nowrap;
-      overflow: hidden;
-      text-overflow: ellipsis;
+      font-size: 1rem;
     }
   }
-`
-
-const Description = styled.p`
-  font-size: 0.8rem;
-  color: ${({ theme }) => theme.colors.secondaryDark};
 `
