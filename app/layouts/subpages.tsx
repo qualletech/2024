@@ -133,7 +133,7 @@ const Container = styled.div`
   width: 100dvw;
   background: ${theme.colors.backgroundLight}75;
   display: grid;
-  grid-gap: 1rem;
+  grid-gap: 0.5rem;
   grid-template-rows: 1fr auto;
   overflow: none;
 `
@@ -209,7 +209,7 @@ const IconContainer = styled.a<{ $active?: boolean }>`
 const Main = styled.main`
   display: grid;
   grid-template-rows: auto 1fr;
-  grid-gap: 1rem;
+  grid-gap: 0.5rem;
   height: 100%;
   padding: 2rem 0rem 0rem 2rem;
   overflow: auto;
