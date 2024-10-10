@@ -8,95 +8,127 @@ import styled from "styled-components"
 export default function Page() {
   return (
     <PageContainer>
-      <AboutContainer>
-        <AboutQualle>
-          <h3>Qualle</h3>
-          <p>
-            /kwɑːl.i/ quall-e
-            <br />
-            jellyfish
-          </p>
-          <TextParagraph>
-            <p>
-              "Qualle" the german word for jellyfish, embodies the essence of what we strive to achieve in our work at
-              Qualle Tech.
-            </p>
-
-            <p>
-              Jellyfish are renowned for their adaptability and fluidity, traits we mirror in our work. Our goal is to
-              craft digital solutions that empower individuals and businesses to navigate their digital landscape
-              effortlessly.
-            </p>
-
-            <p>
-              Just as jellyfish thrive in diverse environments, we believe in fostering adaptability and freedom in our
-              pursuit of success. "Qualle" also reflects our dedication to supporting passion projects and fostering
-              creativity.
-            </p>
-
-            <p>
-              We strive to imbue ease and fluidity into every project, enabling you to simplify your life, allowing you
-              to thrive in your creativity, and promoting flow.
-            </p>
-          </TextParagraph>
-        </AboutQualle>
+      <h2>About</h2>
+      <Columns>
         <AboutVik>
-          <h3>Vik Wedel</h3>
-          <p>
-            they/she/he/xe
-            <br />
-            Founder & Lead Full Stack Developer
-          </p>
+          <TitleContainer>
+            <VikTitle>Vik Wedel</VikTitle>
+            <i>
+              they/she/he
+              <br />
+              Full Stack Developer
+            </i>
+          </TitleContainer>
           <TextParagraph>
-            <p>Vik is passionate about bringing creative visions to life in the digital realm.</p>
             <p>
-              Their passion lies in collaborating with like-minded individuals and businesses, infusing each project
-              with care and expertise.
+              My ultimate goal is to help <Bold>changemakers</Bold> and <Bold>creatives</Bold> turn their ideas into
+              reality in the digital world.
             </p>
             <p>
-              With a background spanning project management, communications, and operations, Vik offers not just
-              technical prowess but also a strategic mindset.
+              As a double-immigrant (Russia &gt; Germany &gt; USA), I understand the importance of adaptability, which
+              has allowed me to thrive in various environments.
             </p>
             <p>
-              As your reliable partner, Vik aims to create a seamless flow-state for your project, exceeding
-              expectations and making your vision a reality.
+              Tech has always been a big part of my life. From a verly age on I was flexing my problem solving skills,
+              fixing little computer bugs, and experimenting with programming. <i>But</i>, this isn&rsquo;t where my
+              tech career began.
             </p>
             <p>
-              Whether it's a passion project or a groundbreaking venture, Vik and Qualle Tech are here to harness
-              technology's power while enjoying every step of the journey.
+              Instead, I pursued a B.Sc. in Business, with a focus on Supply Chain Management and Corporate Development.
+              <br />
+              After college, I held roles in operations, communications and project management, until I finally realized
+              that tech is where I was meant to be all along.
+            </p>
+            <p>
+              While some might consider this a detour, I was able to gather valuable life-skills. My time before
+              JavaScript made me into a well-rounded team player, with strengths in communication, sales, event
+              management, and an understanding of what matters to make things happen.
+            </p>
+            <p>
+              Finally, my tech journey officially started at the Grace Hopper Program at Fullstack Academy, where I
+              gained a solid foundation in programming and experienced many “aha” moments. Straight after bootcamp, I
+              had the chance to apply my coding skills at Square Mile Labs, working on large-scale SaaS projects and
+              making significant strides thanks to my communication and teamwork abilities.
+            </p>
+            <p>
+              With this diverse background, I bring a unique perspective to all my work, combining strategic thinking
+              with a can-do attitude. My experience allows me to approach challenges creatively, and my dedication
+              ensures that I consistently bring visions to life — and exceed expectations!
             </p>
           </TextParagraph>
         </AboutVik>
-      </AboutContainer>
+        <QualleContainer>
+          <AboutQualle>
+            <TitleContainer>
+              <QualleTitle>Qualle</QualleTitle>
+              <i>/kwɑːl.i/ - quall-e - jellyfish</i>
+            </TitleContainer>
+            <p>
+              &rsquo;Qualle&rsquo; the german word for jellyfish, perfectly represents what I strive to achieve with my
+              projects.
+            </p>
+
+            <p>
+              Jellyfish are known for their adaptability, resilience and fluidity. Inspired by this symbolism I aim to
+              create products and solutions that empower you to navigate your digital landscape effortlessly, achieving
+              success in a flow-like state.
+            </p>
+          </AboutQualle>
+        </QualleContainer>
+      </Columns>
     </PageContainer>
   )
 }
 
-const AboutContainer = styled.div`
+const Columns = styled.div`
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 2fr 1fr;
   grid-gap: 5rem;
-  align-items: start;
-  padding: 0 2rem 1rem 0;
   overflow: auto;
-  @media screen and (max-width: 1023px) and (orientation: portrait) {
+  padding-right: 2rem;
+  @media screen and (max-width: 769px) {
     grid-template-columns: unset;
-    grid-gap: 2rem;
+    overflow: unset;
+    grid-gap: 1rem;
   }
+`
+
+const QualleContainer = styled.div`
+  margin-left: auto;
+  margin-right: auto;
+  width: 80%;
 `
 
 const AboutQualle = styled.div`
   display: grid;
-  grid-gap: 1rem;
-  border: 3px solid ${theme.colors.neutralDark};
-  border-radius: 1rem;
-  padding: 1rem;
+  grid-gap: 0.5rem;
+  border: 2px solid ${theme.colors.neutralLight}70;
+  border-radius: 10rem;
+  padding: 5rem;
+  > p {
+    font-size: 0.9rem;
+  }
+`
+
+const QualleTitle = styled.h3`
+  font-size: 1.4rem;
+  color: ${theme.colors.neutralLight};
 `
 
 const AboutVik = styled.div`
   display: grid;
-  grid-gap: 1rem;
-  border: 3px solid ${theme.colors.interactionDark};
-  border-radius: 1rem;
-  padding: 1rem;
+  grid-gap: 0.7rem;
+`
+
+const VikTitle = styled.h3`
+  color: ${theme.colors.interactionLight};
+  line-height: 1;
+`
+
+const Bold = styled.span`
+  font-weight: 600;
+`
+
+const TitleContainer = styled.div`
+  display: grid;
 `
