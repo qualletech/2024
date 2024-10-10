@@ -12,9 +12,17 @@ export default function ProjectDetailPage({ projectDetails }) {
   return (
     <Container>
       <h2>{title}</h2>
+      {projectDetails?.url ? (
+        <Link href={projectDetails?.url} target="__blank">
+          Check it out
+        </Link>
+      ) : null}
       <DeployInfo>{timeline}</DeployInfo>
       {projectDetails?.collab ? <p>{projectDetails?.collab}</p> : null}
-      <Separator />
+      <Columns>
+        <Separator />
+      </Columns>
+
       <Columns>
         <ProjectInfo>
           <TextParagraph>
@@ -24,6 +32,10 @@ export default function ProjectDetailPage({ projectDetails }) {
           <TextParagraph>
             <SectionTitle>Unlocking the Flow</SectionTitle>
             {documentToReactComponents(flow)}
+          </TextParagraph>
+          <TextParagraph>
+            <SectionTitle>Tech Stack</SectionTitle>
+            <p>{projectDetails?.techStack}</p>
           </TextParagraph>
         </ProjectInfo>
         <ImageInfo>
@@ -36,7 +48,13 @@ export default function ProjectDetailPage({ projectDetails }) {
               loading="lazy"
             />
           </ImageContainer>
-          <p>Image shows mock data.</p>
+          {projectDetails?.review ? (
+            <TextParagraph>
+              <SectionTitle>Review</SectionTitle>
+              <q>{projectDetails?.review}</q>
+              <i>&mdash;{projectDetails?.reviewSource}</i>
+            </TextParagraph>
+          ) : null}
         </ImageInfo>
       </Columns>
     </Container>
@@ -45,19 +63,21 @@ export default function ProjectDetailPage({ projectDetails }) {
 
 const Container = styled.div`
   display: grid;
-  grid-gap: 1.5rem;
+  grid-gap: 0.5rem;
   align-content: start;
   overflow: auto;
 `
 
 const DeployInfo = styled.p`
   font-style: italic;
-  font-size: 1.2rem;
+  font-size: 1.1rem;
   color: ${({ theme }) => theme.colors.secondaryDark};
 `
 const ImageContainer = styled.div`
   font-size: 0;
   box-sizing: content-box;
+  border: 2px solid ${({ theme }) => theme.colors.backgroundLight};
+  border-radius: 1rem;
   > img {
     border-radius: 1rem;
     width: 100%;
@@ -80,7 +100,7 @@ const Columns = styled.div`
 
 const ProjectInfo = styled.div`
   display: grid;
-  grid-gap: 1.5rem;
+  grid-gap: 0.5rem;
 `
 
 const ImageInfo = styled.div`
@@ -90,5 +110,13 @@ const ImageInfo = styled.div`
 `
 
 const SectionTitle = styled.h3`
+  font-size: 1.4rem;
+  color: ${({ theme }) => theme.colors.interactionDark};
+`
+
+const Link = styled.a`
+  font-size: 1.2rem;
+  font-weight: bold;
+  font-family: "Josefin Sans", sans-serif;
   color: ${({ theme }) => theme.colors.interactionDark};
 `
