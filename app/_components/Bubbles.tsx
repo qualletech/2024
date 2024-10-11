@@ -34,7 +34,7 @@ const bubbleAnimation = keyframes`
        opacity: 0.06;
      }
      100% {
-       transform: translateY(-100vh);
+       transform: translateY(-120vh);
        opacity: 0.7;
      }
   `
@@ -50,7 +50,7 @@ const sidewaysAnimation = keyframes`
 const Bubble = styled.div`
   border-radius: 100%;
   position: absolute;
-  bottom: -2rem;
+  bottom: -5rem;
   animation:
     ${bubbleAnimation} 15s ease-in-out infinite,
     ${sidewaysAnimation} 4s ease-in-out infinite alternate;

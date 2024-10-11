@@ -11,4 +11,5 @@ const Container = styled.div`
   grid-gap: 0.5rem;
   align-content: start;
   overflow: auto;
+  width: 100%;
 `

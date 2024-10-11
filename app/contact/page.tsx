@@ -3,6 +3,7 @@
 import theme from "../../styles/theme"
 import Bubbles from "../_components/Bubbles"
 import PageContainer from "../_components/PageContainer"
+import TextParagraph from "../_components/TextParagraph"
 import { mdiLoading } from "@mdi/js"
 import Icon from "@mdi/react"
 import { useState } from "react"
@@ -69,8 +70,11 @@ export default function Page() {
   return (
     <PageContainer>
       <h2>Contact</h2>
-      <p>Do you have an idea or a problem that needs solving?</p>
-      <p>Fill out the form and I&rsquo;ll reach out to set up a call for a free consultation!</p>
+      <TextParagraph>
+        <p>Do you have an idea or a problem that needs solving?</p>
+        <p>Fill out the form and I&rsquo;ll reach out to set up a call for a free consultation!</p>
+      </TextParagraph>
+
       <Columns>
         <Form>
           <NameAndEmailFields>
@@ -127,12 +131,11 @@ export default function Page() {
 const Form = styled.div`
   display: grid;
   grid-gap: 1rem;
-  overflow: auto;
   align-items: start;
   align-content: start;
+  padding-right: 0.5rem;
   @media screen and (max-width: 1023px) and (orientation: portrait) {
     grid-gap: 1.5rem;
-    padding-right: 2rem;
   }
 `
 
@@ -203,5 +206,6 @@ const Columns = styled.div`
     grid-template-columns: unset;
     overflow: unset;
     grid-gap: 1rem;
+    padding-right: unset;
   }
 `
