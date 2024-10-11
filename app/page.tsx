@@ -1,5 +1,6 @@
 "use client"
 
+import SUBPAGES from "./_utils/CONSTANTS"
 import { useRouter } from "next/navigation"
 import { useState } from "react"
 import styled, { keyframes } from "styled-components"
@@ -21,48 +22,17 @@ export default function Page() {
   }
   return (
     <Columns>
-      <Blob
-        onClick={() => handleTileClick("/projects")}
-        $background="blob1.svg"
-        $margin="-30"
-        $left="0"
-        $isAnimating={isAnimating}
-        $expandedBlob={expandedBlob === "/projects"}
-      >
-        <BlobText $isAnimating={isAnimating}>Projects</BlobText>
-      </Blob>
-      <Blob
-        onClick={() => handleTileClick("/blog")}
-        $background="blob2.svg"
-        $margin="60"
-        $left="0"
-        $isAnimating={isAnimating}
-        $expandedBlob={expandedBlob === "/blog"}
-      >
-        <BlobText $isAnimating={isAnimating}>Blog</BlobText>
-      </Blob>
-      <LastColumn>
+      {SUBPAGES.map((subpage) => (
         <Blob
-          onClick={() => handleTileClick("/about")}
-          $background="blob3.svg"
-          $margin="-20"
-          $left="-40"
+          onClick={() => handleTileClick(subpage?.path)}
+          $background={subpage?.blob}
+          $margin={subpage?.marginShift}
           $isAnimating={isAnimating}
-          $expandedBlob={expandedBlob === "/about"}
+          $expandedBlob={expandedBlob === `${subpage?.path}`}
         >
-          <BlobText $isAnimating={isAnimating}>About</BlobText>
+          <BlobText $isAnimating={isAnimating}>{subpage?.title}</BlobText>
         </Blob>
-        <Blob
-          onClick={() => handleTileClick("/contact")}
-          $background="blob4.svg"
-          $margin="-150"
-          $left="20"
-          $isAnimating={isAnimating}
-          $expandedBlob={expandedBlob === "/contact"}
-        >
-          <BlobText $isAnimating={isAnimating}>Contact</BlobText>
-        </Blob>
-      </LastColumn>
+      ))}
     </Columns>
   )
 }
@@ -75,11 +45,6 @@ const Columns = styled.div`
   @media screen and (max-width: 1023px) and (orientation: portrait) {
     grid-auto-flow: row;
   }
-`
-
-const LastColumn = styled.div`
-  display: grid;
-  padding: 0;
 `
 
 const floatAnimation = keyframes`
@@ -130,12 +95,10 @@ const expandAnimationPortrait = keyframes`
 const Blob = styled.div<{
   $background: string
   $margin: string
-  $left: string
   $isAnimating: boolean
   $expandedBlob: boolean
 }>`
   top: ${({ $margin }) => `${$margin}px`};
-  left: ${({ $left }) => `${$left}px`};
   cursor: pointer;
   display: grid;
   justify-content: center;
@@ -154,9 +117,6 @@ const Blob = styled.div<{
     animation-name: ${({ $isAnimating }) => ($isAnimating ? "none" : floatAnimation)};
     animation-duration: ${({ $isAnimating }) => ($isAnimating ? "none" : "5s")};
     animation-iteration-count: ${({ $isAnimating }) => ($isAnimating ? "none" : "infinite")};
-  }
-  > h3 {
-    left: ${({ $left }) => `calc(${$left}px / 2)`};
   }
   @media screen and (max-width: 1023px) and (orientation: portrait) {
     top: 0;

@@ -2,8 +2,9 @@ import { createGlobalStyle } from "styled-components"
 
 const GlobalStyles = createGlobalStyle`
   * {
-    font-family: 'Josefin Sans', sans-serif;
-    font-size: 18px;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 16px;
+    font-weight: 400;
     box-sizing: border-box;
     -moz-box-sizing: border-box;
     -webkit-box-sizing: border-box;
@@ -13,13 +14,16 @@ const GlobalStyles = createGlobalStyle`
     padding: 0;
     -webkit-font-smoothing: antialiased;
     position: relative;
-    color: ${({ theme }) => theme.colors.primaryDark};
+    color: ${({ theme }) => theme.colors.primaryLight};
    -webkit-tap-highlight-color: transparent;
   }
 
   h1 {
     font-family: 'Comfortaa', sans-serif;
+    color: ${({ theme }) => theme.colors.primaryDark};
+    font-weight: 600;
     text-transform: uppercase;
+    line-height: 1.5;
     margin: 0;
     font-size: 3rem;
     @media screen and (max-width: 769px) and (orientation: portrait) {
@@ -29,10 +33,11 @@ const GlobalStyles = createGlobalStyle`
   }
 
   h2 {
-
+  font-family: 'Josefin Sans', sans-serif;
     margin: 0;
     font-size: 2.5rem;
-    color: ${({ theme }) => theme.colors.secondaryDark};
+    line-height: 1.5;
+    color: ${({ theme }) => theme.colors.secondaryLight};
     font-weight: 400;
     @media screen and (max-width: 769px) and (orientation: portrait) {
       font-size: 2rem;
@@ -40,8 +45,11 @@ const GlobalStyles = createGlobalStyle`
   }
 
   h3 {
+  font-family: 'Josefin Sans', sans-serif;
+  color: ${({ theme }) => theme.colors.primaryDark};
     font-size: 2rem;
     margin: 0;
+    line-height: 1.5;
     font-weight: 400;
     @media screen and (max-width: 769px) and (orientation: portrait) {
       font-size: 1.8rem;
@@ -49,14 +57,12 @@ const GlobalStyles = createGlobalStyle`
   }
 
     ul {
-    list-style-type: disc; /* You can change this to whatever style you prefer */
-    margin: 1rem 0; /* Adds margin to the top and bottom of the list */
-    padding-left: 1.5rem; /* Adds padding to the left of the list items */
+    list-style-type: disc;
+    padding-left: 1.5rem;
+    display: grid;
+    grid-gap: 0.2rem;
   }
 
-  li {
-    margin-bottom: 0.5rem; /* Adds margin to the bottom of each list item */
-  }
 
   ::-webkit-scrollbar {
     box-sizing: content-box;

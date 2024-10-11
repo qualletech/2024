@@ -8,7 +8,7 @@ export default function PageContainer({ children }) {
 
 const Container = styled.div`
   display: grid;
-  grid-gap: 1.5rem;
+  grid-gap: 0.5rem;
   align-content: start;
   overflow: auto;
 `

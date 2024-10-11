@@ -8,7 +8,7 @@ export default function Columns({ children }) {
 
 const ColumnsDiv = styled.div`
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-columns: repeat(4, 1fr);
   align-content: start;
   grid-gap: 1rem;
   overflow: auto;
@@ -16,7 +16,7 @@ const ColumnsDiv = styled.div`
   @media screen and (max-width: 1023px) and (orientation: portrait) {
     grid-template-columns: unset;
   }
-  @media screen and (max-width: 769px) and (orientation: landscape) {
-    grid-template-columns: 1fr 1fr;
+  @media screen and (max-width: 1023px) and (orientation: landscape) {
+    grid-template-columns: repeat(2, 1fr);
   }
 `

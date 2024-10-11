@@ -1,6 +1,7 @@
 "use client"
 
 import theme from "../../styles/theme"
+import Bubbles from "../_components/Bubbles"
 import PageContainer from "../_components/PageContainer"
 import { mdiLoading } from "@mdi/js"
 import Icon from "@mdi/react"
@@ -67,52 +68,59 @@ export default function Page() {
 
   return (
     <PageContainer>
-      <h2>Contact Us</h2>
+      <h2>Contact</h2>
       <p>Do you have an idea or a problem that needs solving?</p>
-      <p>Fill out the form and we'll reach out to set up a call for a free consultation!</p>
-      <Form>
-        <NameAndEmailFields>
+      <p>Fill out the form and I&rsquo;ll reach out to set up a call for a free consultation!</p>
+      <Columns>
+        <Form>
+          <NameAndEmailFields>
+            <Label>
+              Name*
+              <Input
+                type="text"
+                name="name"
+                placeholder="Your Name Here"
+                value={formData?.name || ""}
+                onChange={handleChange}
+                required
+              />
+            </Label>
+            <Label>
+              Email*
+              <Input
+                type="email"
+                name="email"
+                placeholder="Your Email Here"
+                value={formData?.email || ""}
+                onChange={handleChange}
+                required
+              />
+            </Label>
+          </NameAndEmailFields>
           <Label>
-            Name*
-            <Input
-              type="text"
-              name="name"
-              placeholder="Your Name Here"
-              value={formData?.name || ""}
-              onChange={handleChange}
+            Request*
+            <TextArea
+              name="request"
+              placeholder="Details about your Project or Questions Here"
               required
+              rows={8}
+              value={formData?.request || ""}
+              onChange={handleChange}
             />
           </Label>
-          <Label>
-            Email*
-            <Input
-              type="email"
-              name="email"
-              placeholder="Your Email Here"
-              value={formData?.email || ""}
-              onChange={handleChange}
-              required
-            />
-          </Label>
-        </NameAndEmailFields>
-        <Label>
-          Request*
-          <TextArea
-            name="request"
-            placeholder="Details about your Project or Questions Here"
-            required
-            rows={8}
-            value={formData?.request || ""}
-            onChange={handleChange}
-          />
-        </Label>
-        <ButtonContainer>
-          <Button type="button" onClick={sendEmail} $deactivated={!formValid}>
-            {isLoading ? <Icon path={mdiLoading} spin size={0.8} /> : "Send"}
-          </Button>
-          {message.length > 0 ? <p>{message}</p> : null}
-        </ButtonContainer>
-      </Form>
+          <ButtonContainer>
+            <Button type="button" onClick={sendEmail} $deactivated={!formValid}>
+              {isLoading ? (
+                <Icon path={mdiLoading} spin size={0.7} color={theme.colors.primaryDark} />
+              ) : (
+                <ButtonText>Send</ButtonText>
+              )}
+            </Button>
+            {message.length > 0 ? <p>{message}</p> : null}
+          </ButtonContainer>
+        </Form>
+        <Bubbles />
+      </Columns>
     </PageContainer>
   )
 }
@@ -120,11 +128,11 @@ const Form = styled.div`
   display: grid;
   grid-gap: 1rem;
   overflow: auto;
-  padding-right: 2rem;
+  align-items: start;
+  align-content: start;
   @media screen and (max-width: 1023px) and (orientation: portrait) {
-    align-items: start;
-    align-content: start;
     grid-gap: 1.5rem;
+    padding-right: 2rem;
   }
 `
 
@@ -138,7 +146,8 @@ const NameAndEmailFields = styled.div`
 `
 
 const Label = styled.label`
-  font-size: 1.2rem;
+  font-family: "Josefin Sans", sans-serif;
+  font-size: 1.4rem;
   display: grid;
   grid-gap: 0.5rem;
 `
@@ -175,5 +184,24 @@ const ButtonContainer = styled.div`
   grid-gap: 0.5rem;
   > p {
     text-align: center;
+  }
+`
+
+const ButtonText = styled.p`
+  font-family: "Josefin Sans", sans-serif;
+  font-size: 1.3rem;
+  color: ${theme.colors.primaryDark};
+`
+
+const Columns = styled.div`
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  grid-gap: 5rem;
+  overflow: auto;
+  padding-right: 2rem;
+  @media screen and (max-width: 769px) {
+    grid-template-columns: unset;
+    overflow: unset;
+    grid-gap: 1rem;
   }
 `

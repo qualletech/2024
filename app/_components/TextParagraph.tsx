@@ -8,9 +8,9 @@ export default function TextParagraph({ children }) {
 
 const TextParagraphContainer = styled.div`
   display: grid;
-  grid-gap: 1rem;
+  grid-gap: 0.5rem;
   > p {
-    font-size: 1.2rem;
-    line-height: 1.5rem;
+    font-size: 1rem;
+    line-height: 1.5;
   }
 `
