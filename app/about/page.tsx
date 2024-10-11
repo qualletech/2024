@@ -108,6 +108,10 @@ const AboutQualle = styled.div`
   > p {
     font-size: 0.9rem;
   }
+  @media screen and (max-width: 769px) {
+    padding: 1rem;
+    border-radius: 2rem;
+  }
 `
 
 const QualleTitle = styled.h3`
