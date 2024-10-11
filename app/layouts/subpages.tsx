@@ -90,7 +90,8 @@ const Logo = styled.div`
     right: 2.5rem;
   }
   @media screen and (max-width: 769px) and (orientation: portrait) {
-    top: 3rem;
+    top: 1rem;
+    right: 1.5rem;
   }
   > img {
     @media screen and (max-width: 1023px) and (orientation: portrait) {
