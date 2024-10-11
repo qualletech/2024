@@ -27,7 +27,7 @@ const GlobalStyles = createGlobalStyle`
     margin: 0;
     font-size: 3rem;
     @media screen and (max-width: 769px) and (orientation: portrait) {
-      font-size: 2.5rem;
+      font-size: 1.8rem;
       width: 80%;
     }
   }
@@ -40,7 +40,7 @@ const GlobalStyles = createGlobalStyle`
     color: ${({ theme }) => theme.colors.secondaryLight};
     font-weight: 400;
     @media screen and (max-width: 769px) and (orientation: portrait) {
-      font-size: 2rem;
+      font-size: 1.5rem;
     }
   }
 
@@ -52,7 +52,7 @@ const GlobalStyles = createGlobalStyle`
     line-height: 1.5;
     font-weight: 400;
     @media screen and (max-width: 769px) and (orientation: portrait) {
-      font-size: 1.8rem;
+      font-size: 1.4rem;
     }
   }
 

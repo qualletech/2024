@@ -178,6 +178,8 @@ const Footer = styled.div`
   @media screen and (max-width: 1023px) and (orientation: portrait) {
     grid-template-columns: unset;
     grid-template-rows: 1fr 1fr;
+    grid-gap: 0.5rem;
+    padding: 0.5rem 1rem;
   }
 `
 
@@ -213,4 +215,7 @@ const Main = styled.main`
   height: 100%;
   padding: 2rem 0rem 0rem 2rem;
   overflow: auto;
+  @media screen and (max-width: 1023px) and (orientation: portrait) {
+    padding: 1rem 0rem 0rem 1rem;
+  }
 `
