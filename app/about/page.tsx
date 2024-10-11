@@ -112,7 +112,7 @@ const AboutQualle = styled.div`
 
 const QualleTitle = styled.h3`
   font-size: 1.4rem;
-  color: ${theme.colors.neutralLight};
+  color: ${theme.colors.neutralDark}70;
 `
 
 const AboutVik = styled.div`
