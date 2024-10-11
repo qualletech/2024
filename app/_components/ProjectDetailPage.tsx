@@ -19,9 +19,7 @@ export default function ProjectDetailPage({ projectDetails }) {
       ) : null}
       <DeployInfo>{timeline}</DeployInfo>
       {projectDetails?.collab ? <p>{projectDetails?.collab}</p> : null}
-      <Columns>
-        <Separator />
-      </Columns>
+      <Separator />
 
       <Columns>
         <ProjectInfo>
@@ -91,7 +89,7 @@ const Columns = styled.div`
   grid-gap: 5rem;
   overflow: auto;
   padding-right: 2rem;
-  @media screen and (max-width: 769px) {
+  @media screen and (max-width: 764px) {
     grid-template-columns: unset;
     overflow: unset;
     grid-gap: 1rem;
