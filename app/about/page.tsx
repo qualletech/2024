@@ -29,7 +29,7 @@ export default function Page() {
               has allowed me to thrive in various environments.
             </p>
             <p>
-              Tech has always been a big part of my life. From a verly age on I was flexing my problem solving skills,
+              Tech has always been a big part of my life. From an early age on I was flexing my problem solving skills,
               fixing little computer bugs, and experimenting with programming. <i>But</i>, this isn&rsquo;t where my
               tech career began.
             </p>
