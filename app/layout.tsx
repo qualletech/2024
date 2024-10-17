@@ -23,7 +23,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         />
         <meta
           name="description"
-          content="Qualle Tech provides custom web development services to organizations and individuals."
+          content="My ultimate goal is to help changemakers and creatives turn their ideas into reality through web development services."
         />
         <meta
           name="keywords"
